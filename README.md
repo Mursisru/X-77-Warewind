@@ -9,9 +9,6 @@ BepInEx plugin that adds the **X-77 Warewind** two-stage hypersonic cruise missi
 > [!IMPORTANT]
 > **Requires [Blueprinter](https://github.com/nikkorap/NOBlueprinter-Releases)** (`com.nikkorap.blueprinter`). Install `Blueprinter.dll` into `BepInEx/plugins/` before this mod.
 
-> [!CAUTION]
-> **Do not keep the old combined `MissilePack` plugin installed.** It registers the same json keys and will clash with this mod.
-
 ## Features
 
 - Drop / loft / 50 km cruise / dive; solid booster + ramjet sustainer
