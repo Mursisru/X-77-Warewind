@@ -1,0 +1,1365 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Channel LicenseClient-at747_loyuw9y doesn't exist
+[Licensing::Module] Successfully launched the LicensingClient (PId: 16760)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-at747_loyuw9y" at "2026-08-17T11:23:17.3722498Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 16760, path: "C:/Program Files/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.16.2+bdef8f5
+  Session Id:              72139c52770747b0aabad1f78bf14f7e
+  Correlation Id:          3c53341b6788a8c54723dca5103894cc
+  External correlation Id: 3379926362967068508
+  Machine Id:              uhMC71PJ6a5/2Y9HChRh1ay/NL0=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-at747_loyuw9y" (connect: 1.29s, validation: 0.08s, handshake: 0.07s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-at747_loyuw9y-notifications" at "2026-08-17T11:23:17.5192574Z"
+[Licensing::Module] Connected to LicensingClient (PId: 16760, launch time: 0.01, total connection time: 1.43s)
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Error: Code 500 while processing request (status: Unable to update licenses. Errors: No ULF license found.,Token not found in cache)
+[Licensing::Client] Error: Code 500 while updating license in client (status: Unable to update licenses. Errors: No ULF license found.,Token not found in cache)
+Built from '2022.3/respin/2022.3.62f2-4af31df585-v2' branch; Version is '2022.3.62f3 (96770f904ca7) revision 9860879'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) 64bit Professional' Language: 'ru' Physical Memory: 16310 MB
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Serial number assigned to: "10171420468739-UnityPersXXXX"
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+[Licensing::Client] Successfully resolved entitlement details
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2022.3.62f3\Editor\Unity.exe
+-batchmode
+-nographics
+-projectPath
+C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake
+-executeMethod
+BatchBuild.Build
+-quit
+-logFile
+C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\BakeLog.txt
+Successfully changed project path to: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake
+C:/Users/at747_loyuw9y/source/repos/X-77-Warewind/UnityBake
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [6720]  Target information:
+
+Player connection [6720]  * "[IP] 10.15.1.11 [Port] 55504 [Flags] 2 [Guid] 4248954384 [EditorId] 4248954384 [Version] 1048832 [Id] WindowsEditor(7,Pulsar) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [6720] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [6720] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[Package Manager] UpmClient::Connect -- Connected to IPC stream "Upm-17316" after 0.5 seconds.
+Rebuilding Library because the asset database could not be found!
+[Package Manager] Done resolving packages in 0.89 seconds
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 32 packages:
+  Built-in packages:
+    com.unity.modules.ai@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.ai@1.0.0)
+    com.unity.modules.androidjni@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.androidjni@1.0.0)
+    com.unity.modules.animation@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.animation@1.0.0)
+    com.unity.modules.assetbundle@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.assetbundle@1.0.0)
+    com.unity.modules.audio@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.audio@1.0.0)
+    com.unity.modules.cloth@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.cloth@1.0.0)
+    com.unity.modules.director@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.director@1.0.0)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.imageconversion@1.0.0)
+    com.unity.modules.imgui@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.imgui@1.0.0)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.jsonserialize@1.0.0)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.particlesystem@1.0.0)
+    com.unity.modules.physics@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.physics@1.0.0)
+    com.unity.modules.physics2d@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.physics2d@1.0.0)
+    com.unity.modules.screencapture@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.screencapture@1.0.0)
+    com.unity.modules.terrain@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.terrain@1.0.0)
+    com.unity.modules.terrainphysics@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.terrainphysics@1.0.0)
+    com.unity.modules.tilemap@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.tilemap@1.0.0)
+    com.unity.modules.ui@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.ui@1.0.0)
+    com.unity.modules.uielements@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.uielements@1.0.0)
+    com.unity.modules.umbra@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.umbra@1.0.0)
+    com.unity.modules.unityanalytics@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.unityanalytics@1.0.0)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.unitywebrequest@1.0.0)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle@1.0.0)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.unitywebrequestaudio@1.0.0)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.unitywebrequesttexture@1.0.0)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.unitywebrequestwww@1.0.0)
+    com.unity.modules.vehicles@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.vehicles@1.0.0)
+    com.unity.modules.video@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.video@1.0.0)
+    com.unity.modules.vr@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.vr@1.0.0)
+    com.unity.modules.wind@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.wind@1.0.0)
+    com.unity.modules.xr@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.xr@1.0.0)
+    com.unity.modules.subsystems@1.0.0 (location: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Library\PackageCache\com.unity.modules.subsystems@1.0.0)
+[Subsystems] No new subsystems found in resolved package list.
+Package Manager log level set to [2]
+[Package Manager] Done registering packages in 0.18 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.62f3 (96770f904ca7)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/at747_loyuw9y/source/repos/X-77-Warewind/UnityBake/Assets
+Forcing GfxDevice: Null
+GfxDevice: creating device client; threaded=0; jobified=0
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+[Licensing::Client] Successfully resolved entitlement details
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f3/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f3/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.62f3/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56316
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.62f3/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.016281 seconds.
+- Loaded All Assemblies, in  0.477 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.332 seconds
+Domain Reload Profiling: 806ms
+	BeginReloadAssembly (145ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (49ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (89ms)
+	LoadAllAssembliesAndSetupDomain (176ms)
+		LoadAssemblies (141ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (173ms)
+			TypeCache.Refresh (171ms)
+				TypeCache.ScanAssembly (155ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (332ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (274ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (9ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (3ms)
+			ProcessInitializeOnLoadAttributes (187ms)
+			ProcessInitializeOnLoadMethodAttributes (62ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:80
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 52.5560ms
+Starting: C:\Program Files\Unity\Hub\Editor\2022.3.62f3\Editor\Data\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/at747_loyuw9y/source/repos/X-77-Warewind/UnityBake
+ExitCode: 4 Duration: 0s64ms
+[             ] Require frontend run.  Library/Bee/1900b0aE.dag couldn't be loaded
+DisplayProgressbar: Compiling Scripts
+Starting: C:\Program Files\Unity\Hub\Editor\2022.3.62f3\Editor\Data\Tools\netcorerun\netcorerun.exe "C:\Program Files\Unity\Hub\Editor\2022.3.62f3\Editor\Data\Tools\BuildPipeline\ScriptCompilationBuildProgram.exe" "Library/Bee/1900b0aE.dag.json" "Library/Bee/1900b0aE-inputdata.json" "Library\Bee\buildprogram0.traceevents"
+WorkingDir: C:/Users/at747_loyuw9y/source/repos/X-77-Warewind/UnityBake
+ExitCode: 0 Duration: 0s294ms
+Starting: C:\Program Files\Unity\Hub\Editor\2022.3.62f3\Editor\Data\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --dagfilejson="Library\Bee\1900b0aE.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/at747_loyuw9y/source/repos/X-77-Warewind/UnityBake
+ExitCode: 0 Duration: 3s438ms
+Finished compiling graph: 97 nodes, 282 flattened edges (278 ToBuild, 2 ToUse), maximum node priority 13
+[ 1/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.DeviceSimulatorModule.dll_3CCF59A9C476932C.mvfrm
+[ 2/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UmbraModule.dll_360BBEADE16F4E5C.mvfrm
+[ 3/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.DiagnosticsModule.dll_26EB2ECD32FC1A7A.mvfrm
+[ 4/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.WindModule.dll_511121F08E888839.mvfrm
+[ 5/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.WindowsStandalone.Extensions.dll_05605AE3083EBA4B.mvfrm
+[ 6/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.XRModule.dll_D84E72D41EEB62DB.mvfrm
+[ 7/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.VehiclesModule.dll_2B49F7EC561A1B88.mvfrm
+[ 8/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.VideoModule.dll_E040970016DABE8E.mvfrm
+[ 9/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.VirtualTexturingModule.dll_6C893B021039B06E.mvfrm
+[10/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.VFXModule.dll_FEEF9C059DB8A89B.mvfrm
+[11/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.VRModule.dll_A58FAFCF95B1157D.mvfrm
+[12/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.CoreModule.dll_B7A17375554C9EA5.mvfrm
+[13/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UnityWebRequestTextureModule.dll_29B1E2CEDA4789DC.mvfrm
+[14/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UnityTestProtocolModule.dll_A93CC1394C5F6012.mvfrm
+[15/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UnityWebRequestAudioModule.dll_51928CEBC7723927.mvfrm
+[16/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UnityWebRequestModule.dll_C00D2175C14AF323.mvfrm
+[17/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UnityWebRequestAssetBundleModule.dll_1476367436BD4543.mvfrm
+[18/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UnityCurlModule.dll_94166AD8A40279A4.mvfrm
+[19/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UnityWebRequestWWWModule.dll_ACF0AB618FB486D8.mvfrm
+[20/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UnityConnectModule.dll_AE95229E6A4BA086.mvfrm
+[21/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UnityAnalyticsCommonModule.dll_74D4F6515AF00CED.mvfrm
+[22/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UnityAnalyticsModule.dll_1247DC34E0A5BCF2.mvfrm
+[23/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.Graphs.dll_67842BF8639E43D7.mvfrm
+[24/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UIModule.dll_52BD8949F3F69005.mvfrm
+[25/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.TLSModule.dll_7E110396C74B3F2E.mvfrm
+[26/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.TilemapModule.dll_99A74C14B7E3DED1.mvfrm
+[27/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.TextRenderingModule.dll_F081C1B146D7F232.mvfrm
+[28/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.TerrainPhysicsModule.dll_F323143E4DC16583.mvfrm
+[29/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.TextCoreFontEngineModule.dll_9A462F941071114E.mvfrm
+[30/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.SubstanceModule.dll_F239CB40CEC93D03.mvfrm
+[31/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UIElementsModule.dll_DCA21A6C17C7270C.mvfrm
+[32/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.TextCoreTextEngineModule.dll_E22E66059FF4CA6C.mvfrm
+[33/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.TerrainModule.dll_FAAAE493A026FDC8.mvfrm
+[34/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.SubsystemsModule.dll_D863B904149AEB15.mvfrm
+[35/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.StreamingModule.dll_158EB6F783763EF5.mvfrm
+[36/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.SpriteShapeModule.dll_0F451026A3DC03CF.mvfrm
+[37/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.ProfilerModule.dll_E5CD37A37549D2FA.mvfrm
+[38/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll_7C16D61D56818815.mvfrm
+[39/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.SharedInternalsModule.dll_327F58A12D8453F4.mvfrm
+[40/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.SpriteMaskModule.dll_6DB652A246530302.mvfrm
+[41/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.ScreenCaptureModule.dll_C7424FA68FA0723D.mvfrm
+[42/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.PerformanceReportingModule.dll_D996390D41076E8F.mvfrm
+[43/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.PropertiesModule.dll_B1C51F5097CED1C4.mvfrm
+[44/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.Physics2DModule.dll_AD9FB997D4EB7F4C.mvfrm
+[45/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.PhysicsModule.dll_E0646924CA68B4DA.mvfrm
+[46/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.ParticleSystemModule.dll_F2A86B6B347E6AF6.mvfrm
+[47/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.NVIDIAModule.dll_E6E66A6F609F983C.mvfrm
+[48/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.LocalizationModule.dll_7F1EDDF7B8C7659A.mvfrm
+[49/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.JSONSerializeModule.dll_AD5AA2217B3445DB.mvfrm
+[50/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.ImageConversionModule.dll_AE6E19CBB65658A4.mvfrm
+[51/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.InputLegacyModule.dll_8728FDEA862B81B6.mvfrm
+[52/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.IMGUIModule.dll_F396B1FC1A7A36CA.mvfrm
+[53/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.InputModule.dll_21ACDA45CA80C78D.mvfrm
+[54/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.HotReloadModule.dll_E24287AD0F21A339.mvfrm
+[55/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.GIModule.dll_EF86342A335E7273.mvfrm
+[56/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.GridModule.dll_B83362B615A69FC7.mvfrm
+[57/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.GameCenterModule.dll_8489E01224E36D88.mvfrm
+[58/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.DSPGraphModule.dll_B8D85FD64E511D0E.mvfrm
+[59/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.dll_9246FFA3214676C5.mvfrm
+[60/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.DirectorModule.dll_B386FE6CDBF04BED.mvfrm
+[61/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.CrashReportingModule.dll_9F96221EC66CDF68.mvfrm
+[62/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.ContentLoadModule.dll_8EFA3C0CBCBC73B2.mvfrm
+[63/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.ClusterRendererModule.dll_427C1C1B3431A0B0.mvfrm
+[64/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.CoreModule.dll_DAC246C7FD5209D0.mvfrm
+[65/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.AudioModule.dll_BB3712955448A2E9.mvfrm
+[66/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.ClusterInputModule.dll_40D213A5214B72A1.mvfrm
+[67/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.ClothModule.dll_221F6F902E6581CD.mvfrm
+[68/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.AssetBundleModule.dll_F5E3E2CBEE39CBC5.mvfrm
+[69/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.ARModule.dll_10BCB01FF4CCE922.mvfrm
+[70/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.AndroidJNIModule.dll_5A3C95F75EA27C97.mvfrm
+[71/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.AnimationModule.dll_60F9C9A733EE87B7.mvfrm
+[72/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.AIModule.dll_5749EB1C97AF8A59.mvfrm
+[73/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.AccessibilityModule.dll_4D4318E57BF8E551.mvfrm
+[74/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.UnityConnectModule.dll_C1359E8F6FC39FDB.mvfrm
+[75/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.UIElementsSamplesModule.dll_ED7A0B46F2640ABC.mvfrm
+[76/95      0s] WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.rsp2
+[77/95      0s] WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.UnityAdditionalFile.txt
+[78/95      0s] WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll.mvfrm.rsp
+[79/95      0s] WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.rsp
+[80/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.TextCoreFontEngineModule.dll_1BE6B440FD735283.mvfrm
+[81/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.TextCoreTextEngineModule.dll_63CEEAB28CF70BA1.mvfrm
+[82/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.UIElementsModule.dll_DBF3AD2415830DC1.mvfrm
+[83/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.UIBuilderModule.dll_E6FCFA9ACC4A2C45.mvfrm
+[84/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.SceneViewModule.dll_D12430864EB4801F.mvfrm
+[85/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.PresetsUIModule.dll_4DDA86605BEA0B16.mvfrm
+[86/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.SceneTemplateModule.dll_1A9DAD4E7B82BDB4.mvfrm
+[87/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.QuickSearchModule.dll_B1FAAFDA8BD316D3.mvfrm
+[88/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.GraphViewModule.dll_92744D7E5991B311.mvfrm
+[89/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.dll_5FA2B8CAC2D2E9E0.mvfrm
+[90/95      0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.EditorToolbarModule.dll_F6FE3C907C96137C.mvfrm
+[91/95      0s] MovedFromExtractorCombine Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll.mvfrm
+[92/95      0s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+[93/95      0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[94/95      0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+*** Tundra build success (3.40 seconds), 94 items updated, 95 evaluated
+AssetDatabase: script compilation time: 4.442067s
+Begin MonoManager ReloadAssembly
+Total cache size 0
+Total cache size after purge 0
+- Loaded All Assemblies, in  0.469 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Start importing Assets using Guid(00000000000000001000000000000000) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '93ad63751633d8931d579dd8b88b788a') in 0.024293 seconds
+Start importing ProjectSettings/InputManager.asset using Guid(00000000000000002000000000000000) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a3cfdfd5bc6102f343b4829a8ce79dc0') in 0.003129 seconds
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '27bc3806c41bdb543a74bc55adc72a8f') in 0.002872 seconds
+Start importing ProjectSettings/ProjectSettings.asset using Guid(00000000000000004000000000000000) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '7ed404cbf598bdc1619c0a04d2d724ad') in 0.004698 seconds
+Start importing ProjectSettings/AudioManager.asset using Guid(00000000000000006000000000000000) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '292f6cd681078f98ae77be02f37bb3f0') in 0.002742 seconds
+Start importing ProjectSettings/TimeManager.asset using Guid(00000000000000007000000000000000) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c15cae83774660c90452602a6b058633') in 0.002778 seconds
+Start importing ProjectSettings/DynamicsManager.asset using Guid(00000000000000008000000000000000) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '629e0c014710a9954fe94cf2b97a0f0d') in 0.002851 seconds
+Start importing ProjectSettings/QualitySettings.asset using Guid(00000000000000009000000000000000) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '501a5b1271de8da946e0d9f62dd70a3d') in 0.003068 seconds
+Start importing ProjectSettings/EditorBuildSettings.asset using Guid(0000000000000000b000000000000000) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '42a7dea221178c8ff8a7f6c54a05ebc0') in 0.003227 seconds
+Start importing ProjectSettings/EditorSettings.asset using Guid(0000000000000000c000000000000000) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '833fd8b95bc379c0fa32edbb3836570f') in 0.003040 seconds
+Start importing ProjectSettings/NavMeshAreas.asset using Guid(00000000000000004100000000000000) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '5fe2fb6b529ee761bb20746a7ab1b241') in 0.003398 seconds
+Start importing ProjectSettings/Physics2DSettings.asset using Guid(00000000000000005100000000000000) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '38971527cf446bd70982f05c976f6c26') in 0.002881 seconds
+Start importing ProjectSettings/GraphicsSettings.asset using Guid(00000000000000006100000000000000) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '1a6efcc7357d78aec34b1ea3df512eae') in 0.002862 seconds
+Start importing ProjectSettings/ClusterInputManager.asset using Guid(00000000000000007100000000000000) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'eaff7db4dd05d8ff0818f60bff250dfd') in 0.003266 seconds
+Start importing ProjectSettings/UnityConnectSettings.asset using Guid(0000000000000000a100000000000000) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '7fa144b1a243911758944baf90717efe') in 0.003121 seconds
+Start importing ProjectSettings/PresetManager.asset using Guid(0000000000000000b100000000000000) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f8e82747b2c0e3f6eee0b9346750641f') in 0.002834 seconds
+Start importing ProjectSettings/VFXManager.asset using Guid(0000000000000000c100000000000000) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '396c4265c10af43b1b16dd72ffe4ebef') in 0.002764 seconds
+Start importing ProjectSettings/VersionControlSettings.asset using Guid(0000000000000000d100000000000000) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f699c8df73f04ae7374a667632b35689') in 0.002563 seconds
+Start importing ProjectSettings/MemorySettings.asset using Guid(0000000000000000f100000000000000) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '1a756112cecf39e490a601a9eff03275') in 0.002996 seconds
+Start importing Packages/com.unity.modules.imgui using Guid(c060426bfd6e82575228df6656368eaa) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '8902333b06588af5029cfee34ad74076') in 0.000871 seconds
+Start importing Packages/com.unity.modules.animation using Guid(1158e311a3101950348dcecb1bebc42d) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4b13bed27054d1939cda218eb185d038') in 0.000709 seconds
+Start importing Packages/com.unity.modules.xr using Guid(515638b803bef8599dbd6d5c8bdaa53e) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b6eca1bb10ae9962069ab67697f5fb12') in 0.000655 seconds
+Start importing Packages/com.unity.modules.assetbundle using Guid(b219c86ce508e478367c0a46e1aa9fe4) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '81bc1187aed69ff373ff2eba4e66a856') in 0.000642 seconds
+Start importing Assets/MissilePack using Guid(9379c6ba840d16d45bd3ae6f4fb457cc) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '60b9ce8e59e4015c66e6d5ffea66bab7') in 0.000854 seconds
+Start importing Packages/com.unity.modules.screencapture using Guid(5469ef0820152a4ae45d400fdc4626e4) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0d671ba702572809a8e7139fbb07a209') in 0.000658 seconds
+Start importing Packages/com.unity.modules.cloth using Guid(c4df1124e2787ee0c8d1a911de17ee73) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '910cec8c5afcdb496070e8dbfebc2b41') in 0.000648 seconds
+Start importing Packages/com.unity.modules.imageconversion using Guid(850c54ee0b9e1aa740b1c67792eb1f26) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4b4518349c1690f615e4983fae26b92c') in 0.000639 seconds
+Start importing Packages/com.unity.modules.terrainphysics using Guid(95f85adeda79e994f011eb2152cf4fc9) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b77b76c8cbb898c790ec5d2914852b17') in 0.000642 seconds
+Start importing Packages/com.unity.modules.unitywebrequest using Guid(c522a644a29fcab2eaf63298c118a65b) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '24eb8b7b970b4b15175b837494933af7') in 0.000658 seconds
+Start importing Packages/com.unity.modules.unitywebrequestassetbundle using Guid(d5f0b0adc6826e9dd3b72e292e8438be) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b8ddc3c9b7e6078e04ce2334fde66660') in 0.000654 seconds
+Start importing Packages/com.unity.modules.subsystems using Guid(56b94a5b6990c879bb0f057719d1064b) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4cf0f96025ee9e15a99f570070cfaec3') in 0.000699 seconds
+Start importing Packages/com.unity.modules.unityanalytics using Guid(d6c6a000a805f00649b36b542e8426c2) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd703373e9673027352a22fcb397757c7') in 0.000637 seconds
+Start importing Packages/com.unity.modules.physics using Guid(d6db7caf2e852b75ebb9c6098418179c) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f9fd01135c8ca7bc4b5b7765199fb38d') in 0.000657 seconds
+Start importing Packages/com.unity.modules.vr using Guid(178008567c08e6d84014fa87825d10bb) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b79c3fdf3877458333c6c76a155f763e') in 0.000638 seconds
+Start importing Packages/com.unity.modules.physics2d using Guid(376c84ea405e0f2b80562c23bb977216) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ed680e3c20e465a0368371a1f9053e23') in 0.000729 seconds
+Start importing Packages/com.unity.modules.wind using Guid(b77b1ad9c05af0412725856c6c53b037) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd5e232f574be5c0e71654505618918ab') in 0.000881 seconds
+Start importing Packages/com.unity.modules.uielements using Guid(2808ba6bccb2478ec9c7209d8bf1f3cc) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4965993930d81dfc0a45764e728bf8b1') in 0.000759 seconds
+Start importing Packages/com.unity.modules.unitywebrequestaudio using Guid(38e3a8976f0b9c586b6dfbcef4e4066c) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2cd35b792eaa8cbe96f21d879a3e72f1') in 0.000709 seconds
+Start importing Packages/com.unity.modules.particlesystem using Guid(48b10b41f58d5b49717f376cda59eeb8) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ca7262f9ef295b5a00187abd4a30050a') in 0.000689 seconds
+Start importing Packages/com.unity.modules.tilemap using Guid(09e28640d754a611467eebfb261ed749) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '5ab2a987c09d4dc14787b8fcba65a50a') in 0.000650 seconds
+Start importing Packages/com.unity.modules.ui using Guid(39728903e57c60021f80449a8bbc0096) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b267f7291c549a8f27442256309b573f') in 0.000665 seconds
+Start importing Packages/com.unity.modules.androidjni using Guid(995c08a3305ff9f0dab5e86f340bd9a7) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6f8d08e98fde8d7c4385fb621b6be202') in 0.000669 seconds
+Start importing Packages/com.unity.modules.vehicles using Guid(1cf2469083ffa484da4d78dd70d708e8) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '115ceff5840c19dfe9672f6033f8a717') in 0.000656 seconds
+Start importing Packages/com.unity.modules.umbra using Guid(9c7c268fa6492449654839df69f2a2f4) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a8ef4d94cd61c70db1871d39be5ae8ae') in 0.000664 seconds
+Start importing Packages/com.unity.modules.unitywebrequestwww using Guid(dcc8c6e92b172a65719af5ddf47dd968) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '11fed0fc4fd14a07b5d3b1a2b9612519') in 0.000661 seconds
+Start importing Packages/com.unity.modules.jsonserialize using Guid(fc3a810351931f5e6183e16b9beb5563) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd91970cd8c07bdafe4a386e4a343caec') in 0.000669 seconds
+Start importing Packages/com.unity.modules.director using Guid(2d142b475fbfb8cf12ba3a795194300a) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '9500aec0ed8af64340b39c6fa49089c4') in 0.000650 seconds
+Start importing Packages/com.unity.modules.audio using Guid(2d6ba5cbe47e6ad3c87474c56174d4e0) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f55a45c8f2f862f836c6d034806aa792') in 0.000673 seconds
+Start importing Packages/com.unity.modules.video using Guid(ede0462698a4a5643aa9872c074acd38) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6741298b360b0e950c1f8305af5f2b41') in 0.000670 seconds
+Start importing Packages/com.unity.modules.ai using Guid(fd871a8be47119612f7c254e96a822b7) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '09dfde8fda618d70905d7eae2a2485ab') in 0.000688 seconds
+Start importing Packages/com.unity.modules.terrain using Guid(6e1c8b97ec8aa0464e92506ffe099558) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'bb47b3da1c7fc74d233b2872de82768d') in 0.000654 seconds
+Start importing Packages/com.unity.modules.unitywebrequesttexture using Guid(6f1c7ebc8ac78cb951be24c238cbd3ba) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '95887552146bc47ecce76846c799f4d0') in 0.000662 seconds
+Start importing Assets/Editor using Guid(bfa3ed892102d0843be753756513c1d1) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '75f1b6e3f46020cdf1788ffc8e145e8a') in 0.001178 seconds
+Start importing Assets/MissilePack/Materials using Guid(28dbf9db99ab50541960e0ad5838c264) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '243b6bfcd3805e4af4e231f6037118a0') in 0.001109 seconds
+Start importing Assets/MissilePack/Resources using Guid(6abb0d170b04e4d479608ae24488ab2d) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '9775e3713f90ee4d6d7fac3f09cb5132') in 0.000874 seconds
+Start importing Assets/MissilePack/Textures using Guid(1e451f8df9de3324f87c97304b741f7f) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a5e41524dea93368877a506051948a92') in 0.000878 seconds
+Start importing Assets/MissilePack/Materials/Warewind using Guid(40aa5803ecedf854c98fe3046a0676e7) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'fc9c6a360173f105bcec0dce027d9d7a') in 0.000848 seconds
+Start importing Assets/MissilePack/Textures/Warewind using Guid(46a5aa499322b774a94682538edc4785) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '76a2fea32346c1980230e631d8b456b5') in 0.011210 seconds
+Start importing Assets/Editor/NobpBundleBuilder.cs using Guid(94301d234a063294ebc5829028446c75) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'cfff7037ad6cb18797befe5eb3a610c4') in 0.003672 seconds
+Start importing Assets/Editor/BatchBuild.cs using Guid(9a0bc145c5aaa734c944923e6e8ca948) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '7d0d93ded9ae0fe685678e15857699e8') in 0.003308 seconds
+Start importing Packages/com.unity.modules.ui/package.ModuleCompilationTrigger using Guid(51fa60bb2bd1e5bc74e8cc95a7bfd5b7) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'de6b732927334cdcd0a160fab7e0c0ba') in 0.112236 seconds
+Start importing Packages/com.unity.modules.unityanalytics/package.ModuleCompilationTrigger using Guid(71136fc5cf34f2cc10be0e33c0b08019) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '28443bd98fee583c3e370ae0d1280f29') in 0.001066 seconds
+Start importing Packages/com.unity.modules.tilemap/package.ModuleCompilationTrigger using Guid(a1c42005fe7c5d78585a77ce396a5eea) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f4e7f56b0807ad41ede44dd4ddbc8ad1') in 0.001066 seconds
+Start importing Packages/com.unity.modules.assetbundle/package.ModuleCompilationTrigger using Guid(222fc39b0c85d800342910da2cd64781) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '65d89c73641bdd1854f79cbc51606c2c') in 0.001012 seconds
+Start importing Packages/com.unity.modules.unitywebrequest/package.ModuleCompilationTrigger using Guid(d2ec2d1228c8e67cdd913cb5609176a2) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '172c58f0c21bf4c946e0b186250e1d67') in 0.000986 seconds
+Start importing Packages/com.unity.modules.ai/package.ModuleCompilationTrigger using Guid(e2d09a26ce46dc617b54e49a534ace20) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a24ea1244c90bdf007089df7bfde6c08') in 0.000953 seconds
+Start importing Packages/com.unity.modules.terrain/package.ModuleCompilationTrigger using Guid(23032f4383e95e772bce465c5896d0fd) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'e5571763118c2d59b1654f4791e8996c') in 0.000988 seconds
+Start importing Packages/com.unity.modules.imageconversion/package.ModuleCompilationTrigger using Guid(830a36a23cf3ab1e61fa47940a6dc35e) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '45ef1d7240373ebfdfbde026e09b19ed') in 0.000950 seconds
+Start importing Packages/com.unity.modules.unitywebrequesttexture/package.ModuleCompilationTrigger using Guid(a31a332ce3485f00f7df8d987302a29c) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '174de67cc8335cb19301e6f51a0bbf07') in 0.000963 seconds
+Start importing Packages/com.unity.modules.audio/package.ModuleCompilationTrigger using Guid(042dc296246916648e55a43d0eeb2036) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'be05e67044c0e17bd077fbc81e6daf4f') in 0.000966 seconds
+Start importing Packages/com.unity.modules.unitywebrequestaudio/package.ModuleCompilationTrigger using Guid(553737203d61a8109f9544a97201e1aa) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '05b4da5c39031d20f996abbba25f2a42') in 0.001038 seconds
+Start importing Packages/com.unity.modules.vr/package.ModuleCompilationTrigger using Guid(b5bd8fa6f4c55ab6f09322b86d18b0e3) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2f9f25667ba12d3a842ef9ab778941e8') in 0.001200 seconds
+Start importing Packages/com.unity.modules.vehicles/package.ModuleCompilationTrigger using Guid(e5c46c19ce0ce2e0103aa6f82df1043a) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '53d84c0805d7c29fb84b8288d8a9a18a') in 0.001133 seconds
+Start importing Packages/com.unity.modules.unitywebrequestassetbundle/package.ModuleCompilationTrigger using Guid(7610600f5c83e01041a6fe849d39279f) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '89ae8295d436626749dccea3f1263729') in 0.001010 seconds
+Start importing Packages/com.unity.modules.jsonserialize/package.ModuleCompilationTrigger using Guid(e6a135e3ea9cb46795d1b0e05ac3e1e5) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '9ea15046aca71692d8a4dc5833bcdd5f') in 0.000973 seconds
+Start importing Packages/com.unity.modules.video/package.ModuleCompilationTrigger using Guid(f62135e79edb837b2d2ee3c524da864c) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2497985b60510e90cafddde8e4d3d1be') in 0.000939 seconds
+Start importing Packages/com.unity.modules.particlesystem/package.ModuleCompilationTrigger using Guid(17f093324b67f5bd57e55b546736750e) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6619675033c5b443ad1cd0a8019f6947') in 0.000933 seconds
+Start importing Packages/com.unity.modules.xr/package.ModuleCompilationTrigger using Guid(c7a8b0317f4e68556d7509828e9e211e) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c2010b4fd95e949a214b19afe577caae') in 0.000993 seconds
+Start importing Packages/com.unity.modules.cloth/package.ModuleCompilationTrigger using Guid(082fbee38a82835433261a5e9c00e267) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '8f5c231b51acc501dd99da8f56c1df21') in 0.000975 seconds
+Start importing Packages/com.unity.modules.androidjni/package.ModuleCompilationTrigger using Guid(c82e859b16636ddd2ca4a1f63fd34938) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '9742e1e9fa95921e449aa81ce7230bda') in 0.000930 seconds
+Start importing Packages/com.unity.modules.director/package.ModuleCompilationTrigger using Guid(c88e90bad18cceb5d182d0c805883056) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '239967c49a9eb78550a762fa3ed6f4f1') in 0.000972 seconds
+Start importing Packages/com.unity.modules.wind/package.ModuleCompilationTrigger using Guid(2adec19fac7df68adf1fd6eb83197bb1) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f7c6d67054f5a72eaab3cc47de295ed5') in 0.000981 seconds
+Start importing Packages/com.unity.modules.uielements/package.ModuleCompilationTrigger using Guid(8a752aaaadd2410dd9a84e01c1bace9f) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f47c08d8297413b7bb65b64358c8d75a') in 0.000978 seconds
+Start importing Packages/com.unity.modules.umbra/package.ModuleCompilationTrigger using Guid(1b6246f2248883964991eac9e9b4817c) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '94d392e4553521c5a25bc32d17c75fb0') in 0.001057 seconds
+Start importing Packages/com.unity.modules.terrainphysics/package.ModuleCompilationTrigger using Guid(cbb1a39d56ce4d9ac1a46ac505893fa7) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '98b919966ab363a4c4ee6c7468f98633') in 0.001155 seconds
+Start importing Packages/com.unity.modules.animation/package.ModuleCompilationTrigger using Guid(db8e609a39b9b231fccc54e5fa4cbd1b) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c19e35bc818eacdec0d71fc29b6f419c') in 0.001022 seconds
+Start importing Packages/com.unity.modules.physics/package.ModuleCompilationTrigger using Guid(5c1ee4056d0ac7ad3c5a16597fcaa38a) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'e7d8d6b430389f69a13032c5a4e700b5') in 0.001014 seconds
+Start importing Packages/com.unity.modules.subsystems/package.ModuleCompilationTrigger using Guid(8d4bc6bfa28760b29f13174d6b6ea710) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2c935006139ac2e80aa510ae54d59208') in 0.000948 seconds
+Start importing Packages/com.unity.modules.screencapture/package.ModuleCompilationTrigger using Guid(cd561f5f687aed43bf280c27a84f79e3) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f0d56b5144b4707feba9a1b583a5d9ab') in 0.000993 seconds
+Start importing Packages/com.unity.modules.unitywebrequestwww/package.ModuleCompilationTrigger using Guid(ae87256f29d9c8b50490f4caf75b2c41) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2bea182a0d15c36db9a34766a6e92ef6') in 0.000961 seconds
+Start importing Packages/com.unity.modules.imgui/package.ModuleCompilationTrigger using Guid(be13c398521e3c1ad21fb9da30ab2ab6) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'fb0254cf6fb92f161fb370419b870ba2') in 0.000957 seconds
+Start importing Packages/com.unity.modules.physics2d/package.ModuleCompilationTrigger using Guid(fe6a6957b37b61417b457a1e0541791d) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6dd9dd594baf916b36a412720c0b0e0f') in 0.000966 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.377 seconds
+Domain Reload Profiling: 843ms
+	BeginReloadAssembly (211ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (29ms)
+	RebuildCommonClasses (43ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (34ms)
+	LoadAllAssembliesAndSetupDomain (165ms)
+		LoadAssemblies (271ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (7ms)
+			TypeCache.Refresh (5ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (378ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (250ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (8ms)
+			SetLoadedEditorAssemblies (6ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (17ms)
+			ProcessInitializeOnLoadAttributes (184ms)
+			ProcessInitializeOnLoadMethodAttributes (21ms)
+			AfterProcessingInitializeOnLoad (14ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (10ms)
+Start importing Library/BuildPlayer.prefs using Guid(00000000000000005000000000000000) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '1d2399cfa7f39703e94ecc115c6bf35d') in 0.040836 seconds
+Start importing Assets/MissilePack/Textures/Warewind/TexturedCarboningBlackMetal_MetallicGloss.png using Guid(a0c5764e4d62731408b55f55d78c0591) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '09d55b79c2de406aa3d23dbe7df4f994') in 0.127818 seconds
+Start importing Assets/MissilePack/Textures/Warewind/MateWhiteMetal_MetallicGloss.png using Guid(b49d6d046181af84e8964455063ac075) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4767f5c4b7ee49fbe3b5874b810bf594') in 0.095623 seconds
+Start importing Assets/MissilePack/Textures/Warewind/TexturedCarboningBlackMetal_Roughness.png using Guid(d5ba12da9f0876248a3c8bafe450fac6) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'e14a9a056ac19f06216f410c3e00dff9') in 0.104123 seconds
+Start importing Assets/MissilePack/Textures/Warewind/GlossyBlackMetal_MetallicGloss.png using Guid(38b545a46fc9c5b4d893ff9d529578f5) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '18ce97415f6a0de5344f7c2eeacef98f') in 0.089203 seconds
+Start importing Assets/MissilePack/Textures/Warewind/MateBlackMetal_MetallicGloss.png using Guid(a9c4baa4e50c7994fb86e39469fbe2f0) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2b508626d62c7e8d64de2eedad75ef41') in 0.084741 seconds
+Start importing Assets/MissilePack/Textures/Warewind/MateBlackMetal_Roughness.png using Guid(1abe2d020fc9b6949bf03fc018b53de2) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3f43290f79bdcf3f4d0afd4af375d6da') in 0.112185 seconds
+Start importing Assets/MissilePack/Textures/Warewind/TexturedCarboningBlackMetal_Normal.png using Guid(7b2453e0156c0b3449aae7104edd58c4) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '339fc4df6851a9cde02aec70bee122e3') in 0.185473 seconds
+Start importing Assets/MissilePack/Textures/Warewind/MateWhiteMetal_Mask.png using Guid(7d3fe849d0188f149b13b471c56be1fa) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '5824f088c24e464035bfb7d8e35a25cf') in 0.104911 seconds
+Start importing Assets/MissilePack/Textures/Warewind/TexturedCarboningBlackMetal_Mask.png using Guid(7defbcfeb663a1446a2ed7b1da2cfdfd) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '1be3119fce9c0cce2f184918635e88d9') in 0.113037 seconds
+Start importing Assets/MissilePack/Textures/Warewind/GlossyBlackMetal_Roughness.png using Guid(9db12b165814872428eb200eb9968e5e) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '390c3181851de02a5aed28ecd6c60001') in 0.084866 seconds
+Start importing Assets/MissilePack/Textures/Warewind/MateWhiteMetal_Roughness.png using Guid(2e218e959bc8e434ca8954e162bb603d) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'c8fd13bb95af28483c2859fb3a6b2ab8') in 0.095535 seconds
+Start importing Assets/MissilePack/Textures/Warewind/MateBlackMetal_Mask.png using Guid(2f3e49c136ec70f47bd29d3d682d88ba) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'dd5218a860800f5527352e5bf5a67574') in 0.093118 seconds
+Start importing Assets/MissilePack/Textures/Warewind/GlossyBlackMetal_Mask.png using Guid(3f38669b92aea5641b7c4d2b8ec1b296) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '83e6863d9bf9d6128a743b9e75857742') in 0.098130 seconds
+Start importing Assets/MissilePack/Materials/Warewind/DockingPort_0_Mat.mat using Guid(60bd5afa37c6bc04ebfeaf8cd5e8ab5b) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'cded8ce5769159c6e96920d4d678f061') in 0.004816 seconds
+Start importing Assets/MissilePack/Materials/Warewind/MateWhiteMetal.mat using Guid(2145a483788afe1478c010743f68d69a) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0411f7849992ba3735eaa9aa6b1a419c') in 0.002735 seconds
+Start importing Assets/MissilePack/Materials/Warewind/FirstStage_1_Mat.mat using Guid(232cf2a46e9783e4c8fcccc75042718d) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f1222eb8be67d05870763fa0a7bdf601') in 0.002862 seconds
+Start importing Assets/MissilePack/Materials/Warewind/MateBlackMetal.mat using Guid(53839b5e36aa9b04dafe7967bb124251) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6d7ef6e5b300aa23ce316bd3555588de') in 0.002817 seconds
+Start importing Assets/MissilePack/Materials/Warewind/GlossyBlackMetal.mat using Guid(73697bd66352faa4a80270f247f19913) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd8c41eb7684feb5fa7a58e79da021b33') in 0.002828 seconds
+Start importing Assets/MissilePack/Materials/Warewind/TexturedCarboningBlackMetal.mat using Guid(44284a808fba5cf44a7b7cbe17081808) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '75f92440f13520c56ba5f11a541ba2e6') in 0.002965 seconds
+Start importing Assets/MissilePack/Materials/Warewind/MainRocket_secondStage__2_Mat.mat using Guid(3519234ebc1f0e34798453e19486dc9e) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '82b0d2d2923969392a7c5ddff3c5a660') in 0.002712 seconds
+Start importing Assets/MissilePack/Materials/Warewind/MainRocket_secondStage__0_Mat.mat using Guid(65999cb5ce0255b43ae563074bafbd3e) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '40fea97d6b889d3e1a2973910428895f') in 0.002669 seconds
+Start importing Assets/MissilePack/Materials/Warewind/FirstStage_2_Mat.mat using Guid(1d2a8dc5ad327b440b6546818917d26c) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2ab247b680bc86e8f7a82c4b1d9a8728') in 0.002562 seconds
+Start importing Assets/MissilePack/Materials/Warewind/MainRocket_secondStage__1_Mat.mat using Guid(5dc0bb62cc1c7bc4b997748cbb6a7538) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '451772cf190e0589ac9bcd3052b26de7') in 0.002484 seconds
+Start importing Assets/MissilePack/Materials/Warewind/FirstStage_0_Mat.mat using Guid(8de7b1be42f5e8349a19da7fff083d19) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'db68fab004b22fdbe6b2ca3e5e536917') in 0.002593 seconds
+Start importing Assets/MissilePack/Materials/Warewind/FirstStage_3_Mat.mat using Guid(ee1971e514b411c419367d5db294d3ab) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f0af3566b5617c166c865232430093a2') in 0.002873 seconds
+Start importing Assets/MissilePack/X-75-Warewind.fbx using Guid(7e8a91c4b2d64f0e9c3a5f17d6b80e21) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.13 seconds
+ -> (artifact id: 'a3f840bfabdad86586df6727cf0cefe8') in 0.932824 seconds
+Start importing Assets/MissilePack/patch_manifest.txt using Guid(20780441964fb5f4890dee6ed5fde5e0) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '41c3036dc8f2af903229cf2137ca986d') in 0.002966 seconds
+Start importing Packages/com.unity.modules.subsystems/package.json using Guid(30b312a167534621b316172253b08723) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '927191d6bd5c381810aaf18488fc4c42') in 0.003047 seconds
+Start importing Packages/com.unity.modules.jsonserialize/package.json using Guid(40bf3cec17fa0b49fe04443c8332d638) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ab333ab49385357bea0efe2c83a7975b') in 0.002942 seconds
+Start importing Packages/com.unity.modules.screencapture/package.json using Guid(80beef77cb19e713c7c2d481b65ed485) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '44639893d3ea74df4548d5caaebb3923') in 0.002821 seconds
+Start importing Packages/com.unity.modules.cloth/package.json using Guid(906c12bc9cd95d3963c6d58f62522c78) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f252c58b1b67b38b1b5df1ccfe60ba87') in 0.003330 seconds
+Start importing Packages/com.unity.modules.unitywebrequesttexture/package.json using Guid(d0e3ad91972c66f5238f5b9b7d5ae58a) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '5fc8082c322e7c8ec924a76df884079f') in 0.003582 seconds
+Start importing Packages/com.unity.modules.ai/package.json using Guid(f0f13f2ab3d6d13cfc6e4656824bfca8) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6909afb032daf5ded5af7bfa4b8eaa1a') in 0.003174 seconds
+Start importing Packages/com.unity.modules.assetbundle/package.json using Guid(e1ef8466c8fd01a549f10baa4d51fa17) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b06ad4b00e52552e4a9df9a05b5f7c54') in 0.002932 seconds
+Start importing Packages/com.unity.modules.imgui/package.json using Guid(42fe78c8fe682715a2cb531422e6ccb3) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6d4b5e896ad7a16fed1f9946f068a7e4') in 0.003400 seconds
+Start importing Packages/com.unity.modules.tilemap/package.json using Guid(92a378669877c05c6071d0fed687bb95) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '9086e1eeef2510342965bd21ac6cbad2') in 0.003643 seconds
+Start importing Packages/com.unity.modules.terrainphysics/package.json using Guid(d3cbe921f7b3d9a3257e7c61a5761796) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'e1f1c0f9cd2fc0c16dc74c8606743221') in 0.002684 seconds
+Start importing Packages/com.unity.modules.unitywebrequestassetbundle/package.json using Guid(05f7f519769978b79b31d063a7fc6fa1) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4b320db6850392206c39caad6f15e9cc') in 0.003094 seconds
+Start importing Packages/com.unity.modules.imageconversion/package.json using Guid(953fab16d15d5885b3600fcd6388b2ad) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '94fcdeb315d8abe1697b4cf7d1eb678c') in 0.002907 seconds
+Start importing Packages/com.unity.modules.unityanalytics/package.json using Guid(26a4f29db434fd79025c91f6126382cc) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '543cc9fe6038792e160c84bc896089b3') in 0.003441 seconds
+Start importing Packages/com.unity.modules.video/package.json using Guid(96d14b71b907bb52333b2886e665aba6) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '7f54e870f174ae5628c9ec5331d8e889') in 0.003022 seconds
+Start importing Packages/com.unity.modules.particlesystem/package.json using Guid(87d720faa37005c08600090e04d8c739) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'fd1b90496632a6c183db630fd68b43f3') in 0.003279 seconds
+Start importing Packages/com.unity.modules.physics2d/package.json using Guid(f7a8357347c80dc69c08d0b1a05e2122) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd20143b0d935b41fc6e80e31ecb10170') in 0.002996 seconds
+Start importing Packages/com.unity.modules.vr/package.json using Guid(18a4fadfef534684d5af39ca8dc48fe9) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '39b07a0452bf28d0aeca63daa94eb188') in 0.002825 seconds
+Start importing Packages/com.unity.modules.wind/package.json using Guid(b83f06ac0c0696e9563230865ca72b81) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '110daad41c521ba98311e224a9ae0871') in 0.003682 seconds
+Start importing Assets/MissilePack/patch_manifest.json using Guid(c820ae50a68c55e408cb066156386944) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f313ee0abc4e96ff40ba53e963dddb32') in 0.003216 seconds
+Start importing Packages/com.unity.modules.umbra/package.json using Guid(d85e5eeaf8f135aeaaebdc8aa3cff6c3) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '35284f3269c88ae4abf889fd3140d79e') in 0.002677 seconds
+Start importing Packages/com.unity.modules.audio/package.json using Guid(e9df95f53f1c1d0c9199e235d6c42b50) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '84b9445b43158b8a41090261555a8461') in 0.002556 seconds
+Start importing Packages/com.unity.modules.physics/package.json using Guid(1a4266815e998967becf686f9c71f0a6) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '014dcec9a9c95f26251cba82ee7cdf86') in 0.002550 seconds
+Start importing Packages/com.unity.modules.vehicles/package.json using Guid(6afb166a156df2d20433d981f4bb2832) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f7f33a062646dd3b1952df34fe3c1ae5') in 0.003199 seconds
+Start importing Packages/com.unity.modules.unitywebrequestwww/package.json using Guid(fa27413e9edb06a6058d6c894eca0338) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '23d70f5f20f5c05b599502de025df3cb') in 0.003880 seconds
+Start importing Packages/com.unity.modules.unitywebrequestaudio/package.json using Guid(4b518b37798c97b0f860962cbf615533) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3f957f7e8ea61dc2159cc849429a31ad') in 0.002947 seconds
+Start importing Packages/com.unity.modules.xr/package.json using Guid(2c814623cb42764d304be0c5ddd03ceb) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'b8719a7320b52b9a507d81be8f6a54ef') in 0.003300 seconds
+Start importing Packages/com.unity.modules.director/package.json using Guid(ec02776fe29df900b897106d61977735) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'ae0f89c196682071a7a2f24940d91955') in 0.002901 seconds
+Start importing Packages/com.unity.modules.terrain/package.json using Guid(6d56244f8c39a851975d3c0bd432c66f) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '5f65cac08dbdb7face02c56b32d8384b') in 0.003893 seconds
+Start importing Packages/com.unity.modules.androidjni/package.json using Guid(bd1af0a6633ee94ae21c7d1d702cdc12) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '70c9fc7f5a965ee81a7cc069e3d49f5e') in 0.003169 seconds
+Start importing Packages/com.unity.modules.animation/package.json using Guid(7ef8348b8ea834d7e1bc214b07f7fb87) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '3f00931d9996e406850aacf2fc2a99c4') in 0.003084 seconds
+Start importing Packages/com.unity.modules.unitywebrequest/package.json using Guid(3fdd83b151eb8d25c5e2f82fc39dcb04) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '7b787539406591258930dbcba1984438') in 0.003767 seconds
+Start importing Packages/com.unity.modules.uielements/package.json using Guid(4f0f9b9f3ed97ad2b9ba8f1a8e4666c2) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f79c16827910834c72c06ffe4fdd369d') in 0.003554 seconds
+Start importing Packages/com.unity.modules.ui/package.json using Guid(bfd567a3d1631a761bca9e99fa53d86d) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4bdc1f5a2a7e342732dae5e91bfcb4e1') in 0.002980 seconds
+Start importing Assets/MissilePack/WarewindVisual.prefab using Guid(8410478d273a1cd4db2593899291ec36) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd4a4b8135fd3f5cb5d2b45237a66596a') in 0.007049 seconds
+Loading style catalogs (6)
+	StyleSheets/Extensions/base/common.uss
+	UIPackageResources/StyleSheets/Default/Variables/Public/common.uss
+	StyleSheets/Northstar/common.uss
+	StyleSheets/Extensions/fonts/inter.uss
+	StyleSheets/Extensions/base/dark.uss
+	UIPackageResources/StyleSheets/Default/Northstar/Palette/dark.uss
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=4d9b1b08dad69954088eef407bbe20f4): Total: 8.625 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=154 (actual=154, local cache=0, cache server=0)
+		Asset DB Process Time: managed=20 ms, native=3023 ms
+		Asset DB Callback time: managed=198 ms, native=47 ms
+		Scripting: domain reloads=1, domain reload time=876 ms, compile time=4444 ms, other=13 ms
+		Project Asset Count: scripts=92, non-scripts=62
+		Asset File Changes: new=154, changed=154, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeBeforeRefreshCallbacks: 1.402ms
+	ApplyChangesToAssetFolders: 0.098ms
+	Scan: 45.325ms
+	OnSourceAssetsModified: 4.393ms
+	GetAllGuidsForCategorization: 0.041ms
+	CategorizeAssets: 2.688ms
+	ImportOutOfDateAssets: 3237.867ms (-4062.055ms without children)
+		ImportManagerImport: 2854.708ms (30.701ms without children)
+			ImportInProcess: 2823.528ms
+			UpdateCategorizedAssets: 0.479ms
+		CompileScripts: 4444.406ms
+		ReloadNativeAssets: 0.001ms
+		UnloadImportedAssets: 0.075ms
+		ReloadImportedAssets: 0.018ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.035ms
+		InitializingProgressBar: 0.391ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.287ms
+	PostProcessAllAssets: 242.060ms
+	Hotreload: 2.029ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.010ms
+	UnloadStreamsBegin: 0.412ms
+	PersistCurrentRevisions: 0.269ms
+	UnloadStreamsEnd: 0.007ms
+	GenerateScriptTypeHashes: 0.001ms
+	Untracked: 5087.943ms
+Application.AssetDatabase Initial Refresh End
+Scanning for USB devices : 12.674ms
+Initializing Unity extensions:
+[Licensing::Client] Successfully resolved entitlement details
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-UnityBake
+GetVirtualKey: Could not map char: z (122) to any virtual key
+GetVirtualKey: Could not map char: y (121) to any virtual key
+GetVirtualKey: Could not map char: u (117) to any virtual key
+GetVirtualKey: Could not map char: a (97) to any virtual key
+GetVirtualKey: Could not map char: d (100) to any virtual key
+GetVirtualKey: Could not map char: c (99) to any virtual key
+GetVirtualKey: Could not map char: r (114) to any virtual key
+GetVirtualKey: Could not map char: i (105) to any virtual key
+GetVirtualKey: Could not map char: x (120) to any virtual key
+GetVirtualKey: Could not map char: c (99) to any virtual key
+GetVirtualKey: Could not map char: v (118) to any virtual key
+GetVirtualKey: Could not map char: V (86) to any virtual key
+GetVirtualKey: Could not map char: d (100) to any virtual key
+GetVirtualKey: Could not map char: f (102) to any virtual key
+GetVirtualKey: Could not map char: f (102) to any virtual key
+GetVirtualKey: Could not map char: f (102) to any virtual key
+GetVirtualKey: Could not map char: k (107) to any virtual key
+GetVirtualKey: Could not map char: p (112) to any virtual key
+GetVirtualKey: Could not map char: p (112) to any virtual key
+GetVirtualKey: Could not map char: p (112) to any virtual key
+GetVirtualKey: Could not map char: c (99) to any virtual key
+GetVirtualKey: Could not map char: r (114) to any virtual key
+GetVirtualKey: Could not map char: l (108) to any virtual key
+GetVirtualKey: Could not map char: P (80) to any virtual key
+GetVirtualKey: Could not map char: n (110) to any virtual key
+GetVirtualKey: Could not map char: n (110) to any virtual key
+GetVirtualKey: Could not map char: g (103) to any virtual key
+GetVirtualKey: Could not map char: f (102) to any virtual key
+GetVirtualKey: Could not map char: f (102) to any virtual key
+GetVirtualKey: Could not map char: a (97) to any virtual key
+GetVirtualKey: Could not map char: a (97) to any virtual key
+GetVirtualKey: Could not map char: n (110) to any virtual key
+GetVirtualKey: Could not map char: o (111) to any virtual key
+GetVirtualKey: Could not map char: s (115) to any virtual key
+GetVirtualKey: Could not map char: s (115) to any virtual key
+GetVirtualKey: Could not map char: b (98) to any virtual key
+GetVirtualKey: Could not map char: b (98) to any virtual key
+GetVirtualKey: Could not map char: c (99) to any virtual key
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ProgressiveSceneManager::Cancel()
+Unloading 29 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 52 unused Assets / (493.7 KB). Loaded Objects now: 522.
+Memory consumption went from 81.4 MB to 80.9 MB.
+Total: 3.840800 ms (FindLiveObjects: 0.051400 ms CreateObjectMapping: 0.005200 ms MarkObjects: 3.497500 ms  DeleteObjects: 0.285600 ms)
+
+GetVirtualKey: Could not map char: z (122) to any virtual key
+GetVirtualKey: Could not map char: y (121) to any virtual key
+GetVirtualKey: Could not map char: u (117) to any virtual key
+GetVirtualKey: Could not map char: a (97) to any virtual key
+GetVirtualKey: Could not map char: d (100) to any virtual key
+GetVirtualKey: Could not map char: c (99) to any virtual key
+GetVirtualKey: Could not map char: r (114) to any virtual key
+GetVirtualKey: Could not map char: i (105) to any virtual key
+GetVirtualKey: Could not map char: x (120) to any virtual key
+GetVirtualKey: Could not map char: c (99) to any virtual key
+GetVirtualKey: Could not map char: v (118) to any virtual key
+GetVirtualKey: Could not map char: V (86) to any virtual key
+GetVirtualKey: Could not map char: d (100) to any virtual key
+GetVirtualKey: Could not map char: f (102) to any virtual key
+GetVirtualKey: Could not map char: f (102) to any virtual key
+GetVirtualKey: Could not map char: f (102) to any virtual key
+GetVirtualKey: Could not map char: k (107) to any virtual key
+GetVirtualKey: Could not map char: p (112) to any virtual key
+GetVirtualKey: Could not map char: p (112) to any virtual key
+GetVirtualKey: Could not map char: p (112) to any virtual key
+GetVirtualKey: Could not map char: c (99) to any virtual key
+GetVirtualKey: Could not map char: r (114) to any virtual key
+GetVirtualKey: Could not map char: l (108) to any virtual key
+GetVirtualKey: Could not map char: P (80) to any virtual key
+GetVirtualKey: Could not map char: n (110) to any virtual key
+GetVirtualKey: Could not map char: n (110) to any virtual key
+GetVirtualKey: Could not map char: g (103) to any virtual key
+GetVirtualKey: Could not map char: f (102) to any virtual key
+GetVirtualKey: Could not map char: f (102) to any virtual key
+GetVirtualKey: Could not map char: a (97) to any virtual key
+GetVirtualKey: Could not map char: a (97) to any virtual key
+GetVirtualKey: Could not map char: n (110) to any virtual key
+GetVirtualKey: Could not map char: o (111) to any virtual key
+GetVirtualKey: Could not map char: s (115) to any virtual key
+GetVirtualKey: Could not map char: s (115) to any virtual key
+GetVirtualKey: Could not map char: b (98) to any virtual key
+GetVirtualKey: Could not map char: b (98) to any virtual key
+GetVirtualKey: Could not map char: c (99) to any virtual key
+Start importing Assets/MissilePack/X-75-Warewind.fbx using Guid(7e8a91c4b2d64f0e9c3a5f17d6b80e21) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'a3f840bfabdad86586df6727cf0cefe8') in 0.048934 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=e3ae5f211b927444092dd2bddef35420): Total: 0.064 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/MissilePack/Textures/Warewind/TexturedCarboningBlackMetal_MetallicGloss.png using Guid(a0c5764e4d62731408b55f55d78c0591) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '09d55b79c2de406aa3d23dbe7df4f994') in 0.110939 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=9ee4a42d061ae7e4d9df89343913c62a): Total: 0.123 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/MissilePack/Textures/Warewind/MateBlackMetal_MetallicGloss.png using Guid(a9c4baa4e50c7994fb86e39469fbe2f0) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '2b508626d62c7e8d64de2eedad75ef41') in 0.086138 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=17d96e69e30169448a6d1f8381a42177): Total: 0.094 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/MissilePack/Textures/Warewind/GlossyBlackMetal_MetallicGloss.png using Guid(38b545a46fc9c5b4d893ff9d529578f5) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '18ce97415f6a0de5344f7c2eeacef98f') in 0.090523 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=eaf995c73eb311d42aa8a846c4aa721f): Total: 0.101 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/MissilePack/Textures/Warewind/MateWhiteMetal_MetallicGloss.png using Guid(b49d6d046181af84e8964455063ac075) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '4767f5c4b7ee49fbe3b5874b810bf594') in 0.099718 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=8e7bbe5f8754f6947b8ae574913727c6): Total: 0.111 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/MissilePack/Materials/Warewind/MateWhiteMetal.mat using Guid(2145a483788afe1478c010743f68d69a) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '0411f7849992ba3735eaa9aa6b1a419c') in 0.002622 seconds
+Start importing Assets/MissilePack/Materials/Warewind/MateBlackMetal.mat using Guid(53839b5e36aa9b04dafe7967bb124251) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '6d7ef6e5b300aa23ce316bd3555588de') in 0.002620 seconds
+Start importing Assets/MissilePack/Materials/Warewind/GlossyBlackMetal.mat using Guid(73697bd66352faa4a80270f247f19913) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'd8c41eb7684feb5fa7a58e79da021b33') in 0.002948 seconds
+Start importing Assets/MissilePack/Materials/Warewind/TexturedCarboningBlackMetal.mat using Guid(44284a808fba5cf44a7b7cbe17081808) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: '75f92440f13520c56ba5f11a541ba2e6') in 0.003008 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=f441ccad9c48e5647aa02a4383e32c25): Total: 0.021 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=237ad0f02f8a8b144a6dd73e68285801): Total: 0.012 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+MissilePack: WarewindVisual from 'Assets/MissilePack/X-75-Warewind.fbx'
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Warewind.UnityBake.NobpBundleBuilder:EnsureWarewindPrefab (string) (at Assets/Editor/NobpBundleBuilder.cs:234)
+Warewind.UnityBake.NobpBundleBuilder:Build () (at Assets/Editor/NobpBundleBuilder.cs:24)
+BatchBuild:Build () (at Assets/Editor/BatchBuild.cs:10)
+
+(Filename: Assets/Editor/NobpBundleBuilder.cs Line: 234)
+
+Start importing Assets/MissilePack/patch_manifest.txt using Guid(20780441964fb5f4890dee6ed5fde5e0) Importer(-1,00000000000000000000000000000000) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+ -> (artifact id: 'f6be902754a46809f6568b77c8407c31') in 0.002775 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=a322a8d4950f3f84c9975234512f8e98): Total: 0.014 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+GetVirtualKey: Could not map char: z (122) to any virtual key
+GetVirtualKey: Could not map char: y (121) to any virtual key
+GetVirtualKey: Could not map char: u (117) to any virtual key
+GetVirtualKey: Could not map char: a (97) to any virtual key
+GetVirtualKey: Could not map char: d (100) to any virtual key
+GetVirtualKey: Could not map char: c (99) to any virtual key
+GetVirtualKey: Could not map char: r (114) to any virtual key
+GetVirtualKey: Could not map char: i (105) to any virtual key
+GetVirtualKey: Could not map char: x (120) to any virtual key
+GetVirtualKey: Could not map char: c (99) to any virtual key
+GetVirtualKey: Could not map char: v (118) to any virtual key
+GetVirtualKey: Could not map char: V (86) to any virtual key
+GetVirtualKey: Could not map char: d (100) to any virtual key
+GetVirtualKey: Could not map char: f (102) to any virtual key
+GetVirtualKey: Could not map char: f (102) to any virtual key
+GetVirtualKey: Could not map char: f (102) to any virtual key
+GetVirtualKey: Could not map char: k (107) to any virtual key
+GetVirtualKey: Could not map char: p (112) to any virtual key
+GetVirtualKey: Could not map char: p (112) to any virtual key
+GetVirtualKey: Could not map char: p (112) to any virtual key
+GetVirtualKey: Could not map char: c (99) to any virtual key
+GetVirtualKey: Could not map char: r (114) to any virtual key
+GetVirtualKey: Could not map char: l (108) to any virtual key
+GetVirtualKey: Could not map char: P (80) to any virtual key
+GetVirtualKey: Could not map char: n (110) to any virtual key
+GetVirtualKey: Could not map char: n (110) to any virtual key
+GetVirtualKey: Could not map char: g (103) to any virtual key
+GetVirtualKey: Could not map char: f (102) to any virtual key
+GetVirtualKey: Could not map char: f (102) to any virtual key
+GetVirtualKey: Could not map char: a (97) to any virtual key
+GetVirtualKey: Could not map char: a (97) to any virtual key
+GetVirtualKey: Could not map char: n (110) to any virtual key
+GetVirtualKey: Could not map char: o (111) to any virtual key
+GetVirtualKey: Could not map char: s (115) to any virtual key
+GetVirtualKey: Could not map char: s (115) to any virtual key
+GetVirtualKey: Could not map char: b (98) to any virtual key
+GetVirtualKey: Could not map char: b (98) to any virtual key
+GetVirtualKey: Could not map char: c (99) to any virtual key
+Asset Pipeline Refresh (id=dbb93eca94fb1c745ad622ff3ee95484): Total: 0.006 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 1.6883ms
+Starting: C:\Program Files\Unity\Hub\Editor\2022.3.62f3\Editor\Data\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aESkipCompile.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssembliesAndTypeDB
+WorkingDir: C:/Users/at747_loyuw9y/source/repos/X-77-Warewind/UnityBake
+ExitCode: 4 Duration: 0s52ms
+[             ] Require frontend run.  Library/Bee/1900b0aESkipCompile.dag couldn't be loaded
+Starting: C:\Program Files\Unity\Hub\Editor\2022.3.62f3\Editor\Data\Tools\netcorerun\netcorerun.exe "C:\Program Files\Unity\Hub\Editor\2022.3.62f3\Editor\Data\Tools\BuildPipeline\ScriptCompilationBuildProgram.exe" "Library/Bee/1900b0aESkipCompile.dag.json" "Library/Bee/1900b0aESkipCompile-inputdata.json" "Library\Bee\buildprogram0.traceevents"
+WorkingDir: C:/Users/at747_loyuw9y/source/repos/X-77-Warewind/UnityBake
+ExitCode: 0 Duration: 0s245ms
+Starting: C:\Program Files\Unity\Hub\Editor\2022.3.62f3\Editor\Data\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aESkipCompile.dag" --continue-on-failure --dagfilejson="Library\Bee\1900b0aESkipCompile.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssembliesAndTypeDB
+WorkingDir: C:/Users/at747_loyuw9y/source/repos/X-77-Warewind/UnityBake
+ExitCode: 0 Duration: 0s66ms
+Finished compiling graph: 3 nodes, 3 flattened edges (3 ToBuild, 0 ToUse), maximum node priority 3
+*** Tundra build success (0.03 seconds), 0 items updated, 2 evaluated
+Asset Pipeline Refresh (id=7e58981f10babab449135b2177b565f3): Total: 0.003 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[ScriptCompilation] Requested script compilation because: Recompiling scripts for player build.
+BuildPlayer: start building target 19
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping application/grpc - - 200 - application/grpc 0.6736ms
+Starting: C:\Program Files\Unity\Hub\Editor\2022.3.62f3\Editor\Data\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aP.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssembliesAndTypeDB
+WorkingDir: C:/Users/at747_loyuw9y/source/repos/X-77-Warewind/UnityBake
+Total cache size 0
+Total cache size after purge 0
+ExitCode: 4 Duration: 0s38ms
+[             ] Require frontend run.  Library/Bee/1900b0aP.dag couldn't be loaded
+Starting: C:\Program Files\Unity\Hub\Editor\2022.3.62f3\Editor\Data\Tools\netcorerun\netcorerun.exe "C:\Program Files\Unity\Hub\Editor\2022.3.62f3\Editor\Data\Tools\BuildPipeline\ScriptCompilationBuildProgram.exe" "Library/Bee/1900b0aP.dag.json" "Library/Bee/1900b0aP-inputdata.json" "Library\Bee\buildprogram0.traceevents"
+WorkingDir: C:/Users/at747_loyuw9y/source/repos/X-77-Warewind/UnityBake
+ExitCode: 0 Duration: 0s230ms
+Starting: C:\Program Files\Unity\Hub\Editor\2022.3.62f3\Editor\Data\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aP.dag" --continue-on-failure --dagfilejson="Library\Bee\1900b0aP.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssembliesAndTypeDB
+WorkingDir: C:/Users/at747_loyuw9y/source/repos/X-77-Warewind/UnityBake
+ExitCode: 0 Duration: 0s63ms
+Finished compiling graph: 3 nodes, 3 flattened edges (3 ToBuild, 0 ToUse), maximum node priority 3
+*** Tundra build success (0.03 seconds), 0 items updated, 2 evaluated
+Compiling shader "Standard" pass "FORWARD" (vp)
+    Full variant space:         1992
+    After settings filtering:   1992
+    After built-in stripping:   24
+    After scriptable stripping: 24
+    Processed in 0.01 seconds
+    starting compilation...
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Total cache size 0
+Total cache size after purge 0
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+    finished in 0.97 seconds. Local cache hits 0 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 24 variants (6.73s CPU time), skipped 0 variants
+    Prepared data for serialisation in 0.00s
+Compiling shader "Standard" pass "FORWARD" (fp)
+    Full variant space:         1512
+    After settings filtering:   1512
+    After built-in stripping:   12
+    After scriptable stripping: 12
+    Processed in 0.00 seconds
+    starting compilation...
+    finished in 0.18 seconds. Local cache hits 0 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 12 variants (1.89s CPU time), skipped 0 variants
+    Prepared data for serialisation in 0.00s
+Compiling shader "Standard" pass "FORWARD_DELTA" (vp)
+    Full variant space:         564
+    After settings filtering:   564
+    After built-in stripping:   39
+    After scriptable stripping: 39
+    Processed in 0.00 seconds
+    starting compilation...
+    finished in 0.25 seconds. Local cache hits 0 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 39 variants (2.78s CPU time), skipped 0 variants
+    Prepared data for serialisation in 0.00s
+Compiling shader "Standard" pass "FORWARD_DELTA" (fp)
+    Full variant space:         564
+    After settings filtering:   564
+    After built-in stripping:   39
+    After scriptable stripping: 39
+    Processed in 0.00 seconds
+    starting compilation...
+    finished in 0.47 seconds. Local cache hits 0 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 39 variants (4.77s CPU time), skipped 0 variants
+    Prepared data for serialisation in 0.00s
+Compiling shader "Standard" pass "ShadowCaster" (vp)
+    Full variant space:         8
+    After settings filtering:   8
+    After built-in stripping:   4
+    After scriptable stripping: 4
+    Processed in 0.00 seconds
+    starting compilation...
+    finished in 0.03 seconds. Local cache hits 1 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 3 variants (0.09s CPU time), skipped 0 variants
+    Prepared data for serialisation in 0.00s
+Compiling shader "Standard" pass "ShadowCaster" (fp)
+    Full variant space:         8
+    After settings filtering:   8
+    After built-in stripping:   4
+    After scriptable stripping: 4
+    Processed in 0.00 seconds
+    starting compilation...
+    finished in 0.02 seconds. Local cache hits 1 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 3 variants (0.05s CPU time), skipped 0 variants
+    Prepared data for serialisation in 0.00s
+Compiling shader "Standard" pass "DEFERRED" (vp)
+    Full variant space:         228
+    After settings filtering:   228
+    After built-in stripping:   12
+    After scriptable stripping: 12
+    Processed in 0.00 seconds
+    starting compilation...
+    finished in 0.07 seconds. Local cache hits 0 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 12 variants (0.70s CPU time), skipped 0 variants
+    Prepared data for serialisation in 0.00s
+Compiling shader "Standard" pass "DEFERRED" (fp)
+    Full variant space:         228
+    After settings filtering:   228
+    After built-in stripping:   12
+    After scriptable stripping: 12
+    Processed in 0.00 seconds
+    starting compilation...
+    finished in 0.08 seconds. Local cache hits 0 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 12 variants (0.81s CPU time), skipped 0 variants
+    Prepared data for serialisation in 0.00s
+Compiling shader "Standard" pass "FORWARD" (vp)
+    Full variant space:         624
+    After settings filtering:   624
+    After built-in stripping:   24
+    After scriptable stripping: 24
+    Processed in 0.00 seconds
+    starting compilation...
+    finished in 0.18 seconds. Local cache hits 0 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 24 variants (1.59s CPU time), skipped 0 variants
+    Prepared data for serialisation in 0.00s
+Compiling shader "Standard" pass "FORWARD" (fp)
+    Full variant space:         444
+    After settings filtering:   444
+    After built-in stripping:   12
+    After scriptable stripping: 12
+    Processed in 0.00 seconds
+    starting compilation...
+    finished in 0.16 seconds. Local cache hits 0 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 12 variants (1.42s CPU time), skipped 0 variants
+    Prepared data for serialisation in 0.00s
+Compiling shader "Standard" pass "FORWARD_DELTA" (vp)
+    Full variant space:         420
+    After settings filtering:   420
+    After built-in stripping:   30
+    After scriptable stripping: 30
+    Processed in 0.00 seconds
+    starting compilation...
+    finished in 0.20 seconds. Local cache hits 0 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 30 variants (1.97s CPU time), skipped 0 variants
+    Prepared data for serialisation in 0.00s
+Compiling shader "Standard" pass "FORWARD_DELTA" (fp)
+    Full variant space:         420
+    After settings filtering:   420
+    After built-in stripping:   30
+    After scriptable stripping: 30
+    Processed in 0.00 seconds
+    starting compilation...
+    finished in 0.25 seconds. Local cache hits 0 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 30 variants (2.62s CPU time), skipped 0 variants
+    Prepared data for serialisation in 0.00s
+Compiling shader "Standard" pass "ShadowCaster" (vp)
+    Full variant space:         4
+    After settings filtering:   4
+    After built-in stripping:   4
+    After scriptable stripping: 4
+    Processed in 0.00 seconds
+    starting compilation...
+    finished in 0.03 seconds. Local cache hits 0 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 4 variants (0.12s CPU time), skipped 0 variants
+    Prepared data for serialisation in 0.00s
+Compiling shader "Standard" pass "ShadowCaster" (fp)
+    Full variant space:         4
+    After settings filtering:   4
+    After built-in stripping:   4
+    After scriptable stripping: 4
+    Processed in 0.00 seconds
+    starting compilation...
+    finished in 0.02 seconds. Local cache hits 0 (0.00s CPU time), remote cache hits 0 (0.00s CPU time), compiled 4 variants (0.07s CPU time), skipped 0 variants
+    Prepared data for serialisation in 0.00s
+Serialized binary data for shader Standard in 0.00s
+    d3d11 (total internal programs: 250, unique: 212)
+
+***Player size statistics***
+Total compressed size 21.4 MB. Total uncompressed size 67.4 MB.
+Unloading 29 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 115 unused Assets / (1.0 MB). Loaded Objects now: 536.
+Memory consumption went from 151.0 MB to 150.0 MB.
+Total: 3.809400 ms (FindLiveObjects: 0.055700 ms CreateObjectMapping: 0.006100 ms MarkObjects: 3.172300 ms  DeleteObjects: 0.574000 ms)
+
+
+***Player size statistics***
+Total compressed size 1.0 KB. Total uncompressed size 4.1 KB.
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 538.
+Memory consumption went from 147.3 MB to 147.3 MB.
+Total: 3.584300 ms (FindLiveObjects: 0.044200 ms CreateObjectMapping: 0.003400 ms MarkObjects: 3.530300 ms  DeleteObjects: 0.005400 ms)
+
+
+-------------------------------------------------------------------------------
+Bundle Name: x77warewind.nobp
+Compressed Size:21.4 mb
+Uncompressed usage by category (Percentages based on user generated assets only):
+Textures               66.7 mb	 98.9% 
+Meshes                 540.9 kb	 0.8% 
+Animations             0.0 kb	 0.0% 
+Sounds                 0.0 kb	 0.0% 
+Shaders                75.2 kb	 0.1% 
+Other Assets           22.0 kb	 0.0% 
+Levels                 0.0 kb	 0.0% 
+Scripts                0.0 kb	 0.0% 
+Included DLLs          0.0 kb	 0.0% 
+File headers           98.0 kb	 0.1% 
+Total User Assets      67.4 mb	 100.0% 
+Complete build size    67.4 mb
+Used Assets and files from the Resources folder, sorted by uncompressed size:
+ 5.3 mb	 7.9% Assets/MissilePack/Textures/Warewind/TexturedCarboningBlackMetal_MetallicGloss.png
+ 5.3 mb	 7.9% Assets/MissilePack/Textures/Warewind/TexturedCarboningBlackMetal_Roughness.png
+ 5.3 mb	 7.9% Assets/MissilePack/Textures/Warewind/TexturedCarboningBlackMetal_Normal.png
+ 5.3 mb	 7.9% Assets/MissilePack/Textures/Warewind/TexturedCarboningBlackMetal_Mask.png
+ 5.3 mb	 7.9% Assets/MissilePack/Textures/Warewind/GlossyBlackMetal_MetallicGloss.png
+ 5.3 mb	 7.9% Assets/MissilePack/Textures/Warewind/MateWhiteMetal_MetallicGloss.png
+ 5.3 mb	 7.9% Assets/MissilePack/Textures/Warewind/MateBlackMetal_MetallicGloss.png
+ 5.3 mb	 7.9% Assets/MissilePack/Textures/Warewind/GlossyBlackMetal_Roughness.png
+ 5.3 mb	 7.9% Assets/MissilePack/Textures/Warewind/MateWhiteMetal_Roughness.png
+ 5.3 mb	 7.9% Assets/MissilePack/Textures/Warewind/GlossyBlackMetal_Mask.png
+ 5.3 mb	 7.9% Assets/MissilePack/Textures/Warewind/MateWhiteMetal_Mask.png
+ 5.3 mb	 7.9% Assets/MissilePack/Textures/Warewind/MateBlackMetal_Mask.png
+ 2.7 mb	 4.0% Assets/MissilePack/Textures/Warewind/MateBlackMetal_Roughness.png
+ 546.0 kb	 0.8% Assets/MissilePack/X-75-Warewind.fbx
+ 75.2 kb	 0.1% Resources/unity_builtin_extra
+ 4.3 kb	 0.0% AssetBundle Object
+ 1.5 kb	 0.0% Assets/MissilePack/WarewindVisual.prefab
+ 0.9 kb	 0.0% Assets/MissilePack/Materials/Warewind/TexturedCarboningBlackMetal.mat
+ 0.9 kb	 0.0% Assets/MissilePack/Materials/Warewind/MateWhiteMetal.mat
+ 0.9 kb	 0.0% Assets/MissilePack/Materials/Warewind/MateBlackMetal.mat
+ 0.9 kb	 0.0% Assets/MissilePack/Materials/Warewind/GlossyBlackMetal.mat
+ 0.9 kb	 0.0% Assets/MissilePack/Materials/Warewind/MainRocket_secondStage__2_Mat.mat
+ 0.9 kb	 0.0% Assets/MissilePack/Materials/Warewind/MainRocket_secondStage__1_Mat.mat
+ 0.9 kb	 0.0% Assets/MissilePack/Materials/Warewind/MainRocket_secondStage__0_Mat.mat
+ 0.9 kb	 0.0% Assets/MissilePack/Materials/Warewind/DockingPort_0_Mat.mat
+ 0.9 kb	 0.0% Assets/MissilePack/Materials/Warewind/FirstStage_3_Mat.mat
+ 0.9 kb	 0.0% Assets/MissilePack/Materials/Warewind/FirstStage_2_Mat.mat
+ 0.9 kb	 0.0% Assets/MissilePack/Materials/Warewind/FirstStage_1_Mat.mat
+ 0.9 kb	 0.0% Assets/MissilePack/Materials/Warewind/FirstStage_0_Mat.mat
+ 0.2 kb	 0.0% Assets/MissilePack/patch_manifest.txt
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
+Bundle Name: Build
+Compressed Size:1.0 kb
+Uncompressed usage by category (Percentages based on user generated assets only):
+Textures               0.0 kb	 0.0% 
+Meshes                 0.0 kb	 0.0% 
+Animations             0.0 kb	 0.0% 
+Sounds                 0.0 kb	 0.0% 
+Shaders                0.0 kb	 0.0% 
+Other Assets           0.2 kb	 4.5% 
+Levels                 0.0 kb	 0.0% 
+Scripts                0.0 kb	 0.0% 
+Included DLLs          0.0 kb	 0.0% 
+File headers           3.9 kb	 95.5% 
+Total User Assets      4.1 kb	 100.0% 
+Complete build size    4.1 kb
+Used Assets and files from the Resources folder, sorted by uncompressed size:
+ 0.1 kb	 2.5% AssetBundle Object
+ 0.1 kb	 2.0% Built-in AssetBundleManifest: AssetBundleManifest
+-------------------------------------------------------------------------------
+Warewind: built C:\Users\at747_loyuw9y\source\repos\X-77-Warewind\UnityBake\Build\X77Warewind.nobp
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Warewind.UnityBake.NobpBundleBuilder:Build () (at Assets/Editor/NobpBundleBuilder.cs:94)
+BatchBuild:Build () (at Assets/Editor/BatchBuild.cs:10)
+
+(Filename: Assets/Editor/NobpBundleBuilder.cs Line: 94)
+
+Asset Pipeline Refresh (id=feb561ac39fb1fd4c9833e19dcaccb95): Total: 0.003 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Batchmode quit successfully invoked - shutting down!
+[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-at747_loyuw9y-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-at747_loyuw9y channel disconnected successfully.
+Cleanup mono
+abort_threads: Failed aborting id: 0000000000004244, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 0000000000001254, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 0000000000004244, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 0000000000001254, mono_thread_manage will ignore it
+
+debugger-agent: Unable to listen on 3568
+[Performance] WinEditorMain                                                                                                  :        1 samples, Peak.  1.51 s (1.0x), Avg.  1.51 s, Total. 1.514 s (4.4%)
+[Performance] WinEditorMain.ConfigureCrashHandler                                                                            :        1 samples, Peak.  76.6 us (1.0x), Avg.  76.6 us, Total. 76.60 us (0.0%)
+[Performance] WinEditorMain.CurlRequestInitialize                                                                            :        1 samples, Peak.   856 us (1.0x), Avg.   856 us, Total. 856.3 us (0.0%)
+[Performance] WinEditorMain.SetupLogFile                                                                                     :        1 samples, Peak.   784 us (1.0x), Avg.   784 us, Total. 784.3 us (0.0%)
+[Performance] WinEditorMain.RunNativeTestsIfRequiredAndExit                                                                  :        1 samples, Peak.   200 ns (1.0x), Avg.   200 ns, Total. 200.0 ns (0.0%)
+[Performance] WinEditorMain.Licensing                                                                                        :        1 samples, Peak.  1.48 s (1.0x), Avg.  1.48 s, Total. 1.478 s (4.3%)
+[Performance] WinEditorMain.InitializeCrashHandler                                                                           :        1 samples, Peak.  28.7 ms (1.0x), Avg.  28.7 ms, Total. 28.72 ms (0.1%)
+[Performance] WinEditorMain.CreateApplication                                                                                :        1 samples, Peak.   293 us (1.0x), Avg.   293 us, Total. 293.0 us (0.0%)
+[Performance] Application.InitializeProject                                                                                  :        1 samples, Peak.  11.9 s (1.0x), Avg.  11.9 s, Total. 11.88 s (34.5%)
+[Performance] Application.PackageManager.StartServer                                                                         :        1 samples, Peak.  7.00 ms (1.0x), Avg.  7.00 ms, Total. 6.996 ms (0.0%)
+[Performance] Application.AcquireProjectLock                                                                                 :        1 samples, Peak.  7.90 ms (1.0x), Avg.  7.90 ms, Total. 7.903 ms (0.0%)
+[Performance] Application.InitializeEngineNoGraphics                                                                         :        1 samples, Peak.  84.2 ms (1.0x), Avg.  84.2 ms, Total. 84.19 ms (0.2%)
+[Performance] Application.PackageManager.Initialize                                                                          :        1 samples, Peak.   530 ms (1.0x), Avg.   530 ms, Total. 530.2 ms (1.5%)
+[Performance] Connecting to Package Manager                                                                                  :       54 samples, Peak.  95.1 us (29.2x), Avg.  3.26 us, Total. 175.9 us (0.0%)
+[Performance] PackageManager::Api::RunRequestSynchronously                                                                   :       16 samples, Peak.  14.2 us (2.9x), Avg.  4.94 us, Total. 79.00 us (0.0%)
+[Performance] Application.EngineGraphics.Initialize                                                                          :        1 samples, Peak.  29.7 ms (1.0x), Avg.  29.7 ms, Total. 29.70 ms (0.1%)
+[Performance] Application.GI.Initialize                                                                                      :        1 samples, Peak.  3.65 ms (1.0x), Avg.  3.65 ms, Total. 3.652 ms (0.0%)
+[Performance] Application.LoadAllDefaultResourcesFromEditor                                                                  :        1 samples, Peak.  2.62 ms (1.0x), Avg.  2.62 ms, Total. 2.617 ms (0.0%)
+[Performance] Application.LoadMonoAssemblies                                                                                 :        1 samples, Peak.   835 ms (1.0x), Avg.   835 ms, Total. 834.8 ms (2.4%)
+[Performance] RestoreManagedReferences                                                                                       :        2 samples, Peak.  51.6 ms (2.0x), Avg.  25.8 ms, Total. 51.65 ms (0.2%)
+[Performance] InitializeOnLoad DrivenRectTransformUndo                                                                       :        2 samples, Peak.   634 us (1.2x), Avg.   549 us, Total. 1.099 ms (0.0%)
+[Performance] InitializeOnLoad SceneSearch                                                                                   :        2 samples, Peak.   171 us (1.1x), Avg.   161 us, Total. 323.0 us (0.0%)
+[Performance] InitializeOnLoad CloudBuild                                                                                    :        2 samples, Peak.  8.40 us (1.3x), Avg.  6.50 us, Total. 13.00 us (0.0%)
+[Performance] InitializeOnLoad NativeFormatImporterUtility                                                                   :        2 samples, Peak.  3.74 ms (1.3x), Avg.  2.98 ms, Total. 5.964 ms (0.0%)
+[Performance] InitializeOnLoad SearchService                                                                                 :        2 samples, Peak.   333 us (1.4x), Avg.   235 us, Total. 470.9 us (0.0%)
+[Performance] InitializeOnLoad SettingsService                                                                               :        2 samples, Peak.  14.1 us (1.3x), Avg.  10.8 us, Total. 21.70 us (0.0%)
+[Performance] InitializeOnLoad WindowLayout                                                                                  :        2 samples, Peak.  1.12 ms (1.1x), Avg.   991 us, Total. 1.983 ms (0.0%)
+[Performance] InitializeOnLoad AssetStoreContext                                                                             :        2 samples, Peak.  43.5 ms (1.1x), Avg.  39.4 ms, Total. 78.90 ms (0.2%)
+[Performance] InitializeOnLoad PoolManager                                                                                   :        2 samples, Peak.  1.07 ms (1.2x), Avg.   877 us, Total. 1.753 ms (0.0%)
+[Performance] InitializeOnLoad MixerEffectDefinitionReloader                                                                 :        2 samples, Peak.  3.12 ms (1.1x), Avg.  2.72 ms, Total. 5.440 ms (0.0%)
+[Performance] InitializeOnLoad ProjectSearch                                                                                 :        2 samples, Peak.  83.2 us (1.1x), Avg.  74.1 us, Total. 148.1 us (0.0%)
+[Performance] InitializeOnLoad UISystemProfilerRenderService                                                                 :        2 samples, Peak.  11.2 us (1.1x), Avg.  9.85 us, Total. 19.70 us (0.0%)
+[Performance] InitializeOnLoad EditMode                                                                                      :        2 samples, Peak.   563 us (1.0x), Avg.   556 us, Total. 1.112 ms (0.0%)
+[Performance] InitializeOnLoad UnityConnect                                                                                  :        2 samples, Peak.  65.8 us (1.0x), Avg.  65.6 us, Total. 131.2 us (0.0%)
+[Performance] InitializeOnLoad ManagedDebugger                                                                               :        2 samples, Peak.   834 us (1.0x), Avg.   800 us, Total. 1.599 ms (0.0%)
+[Performance] InitializeOnLoad ShortcutIntegration                                                                           :        2 samples, Peak.  80.1 us (1.0x), Avg.  78.8 us, Total. 157.7 us (0.0%)
+[Performance] InitializeOnLoad AddComponentWindow                                                                            :        2 samples, Peak.   142 us (1.1x), Avg.   135 us, Total. 269.5 us (0.0%)
+[Performance] InitializeOnLoad ManagedDebuggerWindow                                                                         :        2 samples, Peak.   163 us (1.0x), Avg.   162 us, Total. 323.7 us (0.0%)
+[Performance] InitializeOnLoad CacheServerWindow                                                                             :        2 samples, Peak.  15.4 us (1.3x), Avg.  11.8 us, Total. 23.60 us (0.0%)
+[Performance] InitializeOnLoad PlayModeDownload                                                                              :        2 samples, Peak.  5.87 ms (1.9x), Avg.  3.06 ms, Total. 6.111 ms (0.0%)
+[Performance] InitializeOnLoad MenuItems                                                                                     :        2 samples, Peak.   124 us (1.1x), Avg.   111 us, Total. 222.7 us (0.0%)
+[Performance] InitializeOnLoad PrefabInstanceChangedListener                                                                 :        2 samples, Peak.   189 us (1.0x), Avg.   187 us, Total. 373.8 us (0.0%)
+[Performance] InitializeOnLoad ObjectSelectorSearch                                                                          :        2 samples, Peak.  62.7 us (1.1x), Avg.  58.0 us, Total. 116.0 us (0.0%)
+[Performance] InitializeOnLoad EditorMonitor                                                                                 :        2 samples, Peak.   785 us (1.1x), Avg.   698 us, Total. 1.396 ms (0.0%)
+[Performance] InitializeOnLoad RetainedMode                                                                                  :        2 samples, Peak.  2.84 ms (1.0x), Avg.  2.84 ms, Total. 5.681 ms (0.0%)
+[Performance] InitializeOnLoad EditorShaderLoader                                                                            :        2 samples, Peak.   865 us (1.0x), Avg.   846 us, Total. 1.692 ms (0.0%)
+[Performance] InitializeOnLoad EditorDelegateRegistration                                                                    :        2 samples, Peak.   676 us (1.1x), Avg.   612 us, Total. 1.225 ms (0.0%)
+[Performance] InitializeOnLoad UIDocumentHierarchyWatcher                                                                    :        2 samples, Peak.  99.4 us (1.0x), Avg.  99.2 us, Total. 198.5 us (0.0%)
+[Performance] InitializeOnLoad LiveReloadTrackerCreator                                                                      :        2 samples, Peak.   276 us (1.2x), Avg.   234 us, Total. 468.9 us (0.0%)
+[Performance] InitializeOnLoad UxmlObjectEditorFactories                                                                     :        2 samples, Peak.   602 us (1.1x), Avg.   548 us, Total. 1.096 ms (0.0%)
+[Performance] InitializeOnLoad UXMLEditorFactories                                                                           :        2 samples, Peak.  80.3 ms (1.0x), Avg.  77.6 ms, Total. 155.1 ms (0.5%)
+[Performance] InitializeOnLoad PurchasingService                                                                             :        2 samples, Peak.  9.47 ms (1.0x), Avg.  9.33 ms, Total. 18.65 ms (0.1%)
+[Performance] InitializeOnLoad CloudBuildPoller                                                                              :        2 samples, Peak.   147 us (1.0x), Avg.   144 us, Total. 288.8 us (0.0%)
+[Performance] InitializeOnLoad EditorGameServicesAnalytics                                                                   :        2 samples, Peak.  3.92 ms (1.1x), Avg.  3.46 ms, Total. 6.913 ms (0.0%)
+[Performance] InitializeOnLoad AnalyticsService                                                                              :        2 samples, Peak.   235 us (1.0x), Avg.   230 us, Total. 459.5 us (0.0%)
+[Performance] InitializeOnLoad BuildService                                                                                  :        2 samples, Peak.   212 us (1.0x), Avg.   206 us, Total. 412.1 us (0.0%)
+[Performance] InitializeOnLoad AdsService                                                                                    :        2 samples, Peak.   564 us (1.0x), Avg.   556 us, Total. 1.112 ms (0.0%)
+[Performance] InitializeOnLoad UDPService                                                                                    :        2 samples, Peak.   220 us (1.0x), Avg.   210 us, Total. 419.8 us (0.0%)
+[Performance] InitializeOnLoad CrashService                                                                                  :        2 samples, Peak.   203 us (1.0x), Avg.   197 us, Total. 393.6 us (0.0%)
+[Performance] InitializeOnLoad ServicesRepository                                                                            :        2 samples, Peak.   600 ns (1.1x), Avg.   550 ns, Total. 1.100 us (0.0%)
+[Performance] InitializeOnLoad SearchWindow                                                                                  :        2 samples, Peak.   172 us (1.1x), Avg.   154 us, Total. 307.1 us (0.0%)
+[Performance] InitializeOnLoad CustomIndexers                                                                                :        2 samples, Peak.  29.0 ms (1.2x), Avg.  24.6 ms, Total. 49.15 ms (0.1%)
+[Performance] VersionControl.Task.Wait                                                                                       :        1 samples, Peak.  33.0 us (1.0x), Avg.  33.0 us, Total. 33.00 us (0.0%)
+[Performance] InitializeOnLoad SearchMonitor                                                                                 :        2 samples, Peak.  2.96 ms (1.5x), Avg.  2.01 ms, Total. 4.013 ms (0.0%)
+[Performance] InitializeOnLoad ParameterControllerEditor                                                                     :        2 samples, Peak.  45.6 us (1.4x), Avg.  33.4 us, Total. 66.80 us (0.0%)
+[Performance] InitializeOnLoad LayerSettingsWindow                                                                           :        2 samples, Peak.  53.5 us (1.8x), Avg.  29.0 us, Total. 58.10 us (0.0%)
+[Performance] InitializeOnLoad PackageManagerHookGUIDConverter.RegisterPackagesEventHandler                                  :        2 samples, Peak.  1.03 ms (1.6x), Avg.   626 us, Total. 1.251 ms (0.0%)
+[Performance] InitializeOnLoad EditorDragAndDrop.RegisterEditorClient                                                        :        2 samples, Peak.   288 us (1.1x), Avg.   258 us, Total. 515.8 us (0.0%)
+[Performance] InitializeOnLoad EditorEventCallbacks.InitializeFontAssetResourceChangeCallBacks                               :        2 samples, Peak.  1.53 ms (1.0x), Avg.  1.51 ms, Total. 3.030 ms (0.0%)
+[Performance] InitializeOnLoad SceneTemplateService.Init                                                                     :        2 samples, Peak.  1.66 ms (1.0x), Avg.  1.59 ms, Total. 3.184 ms (0.0%)
+[Performance] InitializeOnLoad DiagnosticSwitchesConsoleMessage.Init                                                         :        2 samples, Peak.  10.1 ms (1.8x), Avg.  5.66 ms, Total. 11.33 ms (0.0%)
+[Performance] InitializeOnLoad PackageManagerWindow.EditorInitializedInSafeMode                                              :        2 samples, Peak.  33.6 ms (2.0x), Avg.  16.9 ms, Total. 33.84 ms (0.1%)
+[Performance] InitializeOnLoad ToolShortcutContext.Init                                                                      :        2 samples, Peak.   189 us (1.0x), Avg.   181 us, Total. 361.8 us (0.0%)
+[Performance] InitializeOnLoad MemoryProfilerCompilationGuard.InjectCompileGuard                                             :        2 samples, Peak.   213 us (1.0x), Avg.   205 us, Total. 409.8 us (0.0%)
+[Performance] InitializeOnLoad AssetPostprocessingInternal.RefreshCustomDependencies                                         :        2 samples, Peak.  4.08 ms (1.4x), Avg.  2.96 ms, Total. 5.912 ms (0.0%)
+[Performance] InitializeOnLoad SysrootManager.Initialize                                                                     :        2 samples, Peak.   646 us (1.1x), Avg.   587 us, Total. 1.174 ms (0.0%)
+[Performance] InitializeOnLoad ScopedRegistryAddedPopup.SubscribeToRegistriesAdded                                           :        2 samples, Peak.  10.4 ms (2.0x), Avg.  5.28 ms, Total. 10.56 ms (0.0%)
+[Performance] InitializeOnLoad SceneVisibilityManager.Initialize                                                             :        2 samples, Peak.  6.20 ms (1.7x), Avg.  3.69 ms, Total. 7.379 ms (0.0%)
+[Performance] InitializeOnLoad EditorWindow.Initialize                                                                       :        2 samples, Peak.   339 us (1.1x), Avg.   307 us, Total. 613.2 us (0.0%)
+[Performance] AssemblyReloadEvents.afterAssemblyReload: UnityEditor.SceneTemplate.SceneTemplateService.AfterAssemblyReload   :        2 samples, Peak.  7.84 ms (1.9x), Avg.  4.11 ms, Total. 8.215 ms (0.0%)
+[Performance] ProcessService.EditorAfterLoadAllAssemblies                                                                    :        2 samples, Peak.   409 us (1.0x), Avg.   395 us, Total. 790.9 us (0.0%)
+[Performance] Application.ReadLicenseInfo                                                                                    :        1 samples, Peak.  14.9 ms (1.0x), Avg.  14.9 ms, Total. 14.89 ms (0.0%)
+[Performance] Application.InitialRefresh                                                                                     :        1 samples, Peak.  8.63 s (1.0x), Avg.  8.63 s, Total. 8.626 s (25.1%)
+[Performance] BuilderAssetModificationProcessor.OnWillCreateAsset                                                            :        1 samples, Peak.  1.13 ms (1.0x), Avg.  1.13 ms, Total. 1.125 ms (0.0%)
+[Performance] ShaderImporter.SourceAssetModified                                                                             :        3 samples, Peak.  2.70 us (1.4x), Avg.  1.87 us, Total. 5.600 us (0.0%)
+[Performance] ShaderIncludeImporter.SourceAssetModified                                                                      :        3 samples, Peak.  8.50 us (1.4x), Avg.  5.90 us, Total. 17.70 us (0.0%)
+[Performance] Compiling Scripts                                                                                              :        1 samples, Peak.  4.44 s (1.0x), Avg.  4.44 s, Total. 4.442 s (12.9%)
+[Performance] AssemblyReloadEvents.beforeAssemblyReload: UnityEditor.SceneTemplate.SceneTemplateService.BeforeAssemblyReload :        1 samples, Peak.  1.13 ms (1.0x), Avg.  1.13 ms, Total. 1.128 ms (0.0%)
+[Performance] PresetManagerPostProcessor.OnPreprocessAsset                                                                   :      164 samples, Peak.  1.84 ms (72.8x), Avg.  25.3 us, Total. 4.146 ms (0.0%)
+[Performance] CancelSplashScreenOnAssetChange.OnPreprocessAsset                                                              :      164 samples, Peak.   182 us (52.0x), Avg.  3.50 us, Total. 574.1 us (0.0%)
+[Performance] DidReloadScriptsAdvancedDropdownWindow.OnScriptReload                                                          :        1 samples, Peak.   269 us (1.0x), Avg.   269 us, Total. 269.2 us (0.0%)
+[Performance] TextureImporter.Import                                                                                         :       17 samples, Peak.   177 ms (1.9x), Avg.  95.8 ms, Total. 1.629 s (4.7%)
+[Performance] ModelImporter.Import                                                                                           :        2 samples, Peak.   923 ms (1.9x), Avg.   483 ms, Total. 966.3 ms (2.8%)
+[Performance] FBXMaterialDescriptionPreprocessor.OnPreprocessMaterialDescription                                             :        8 samples, Peak.  4.96 ms (6.8x), Avg.   726 us, Total. 5.810 ms (0.0%)
+[Performance] SketchupMaterialDescriptionPreprocessor.OnPreprocessMaterialDescription                                        :        8 samples, Peak.   109 us (6.1x), Avg.  17.7 us, Total. 141.7 us (0.0%)
+[Performance] ThreeDSMaterialDescriptionPreprocessor.OnPreprocessMaterialDescription                                         :        8 samples, Peak.   120 us (6.9x), Avg.  17.4 us, Total. 139.1 us (0.0%)
+[Performance] SceneDataContainer.TransformHierarchyChangedSetParentCallback                                                  :       36 samples, Peak.  14.0 us (19.3x), Avg.   725 ns, Total. 26.10 us (0.0%)
+[Performance] SceneVisibilityState.IsFlagSetInParents                                                                        :       36 samples, Peak.  2.10 us (9.3x), Avg.   225 ns, Total. 8.100 us (0.0%)
+[Performance] TreeAOImporter.OnPostprocessModel                                                                              :        2 samples, Peak.  1.28 ms (2.0x), Avg.   642 us, Total. 1.284 ms (0.0%)
+[Performance] AssetDatabase.ImportAssets                                                                                     :       10 samples, Peak.  21.5 ms (10.0x), Avg.  2.15 ms, Total. 21.50 ms (0.1%)
+[Performance] BuilderAssetPostprocessor.OnPostprocessAllAssets                                                               :       16 samples, Peak.  7.46 ms (7.7x), Avg.   971 us, Total. 15.54 ms (0.0%)
+[Performance] ArtifactBrowserPostProcessor.OnPostprocessAllAssets                                                            :       16 samples, Peak.   658 us (7.7x), Avg.  85.0 us, Total. 1.360 ms (0.0%)
+[Performance] AssetEvents.OnPostprocessAllAssets                                                                             :       32 samples, Peak.   321 us (11.6x), Avg.  27.6 us, Total. 882.2 us (0.0%)
+[Performance] AudioMixerPostprocessor.OnPostprocessAllAssets                                                                 :       16 samples, Peak.   584 us (7.9x), Avg.  74.3 us, Total. 1.189 ms (0.0%)
+[Performance] StyleCatalogPostProcessor.OnPostprocessAllAssets                                                               :       16 samples, Peak.   141 ms (8.0x), Avg.  17.7 ms, Total. 282.6 ms (0.8%)
+[Performance] BuildCatalog                                                                                                   :        1 samples, Peak.   140 ms (1.0x), Avg.   140 ms, Total. 139.8 ms (0.4%)
+[Performance] EditorResources.Load                                                                                           :        6 samples, Peak.  13.8 ms (3.0x), Avg.  4.65 ms, Total. 27.89 ms (0.1%)
+[Performance] ModelImporterPostProcessor.OnPostprocessAllAssets                                                              :       16 samples, Peak.  15.0 ms (6.5x), Avg.  2.32 ms, Total. 37.18 ms (0.1%)
+[Performance] RetainedModeAssetPostprocessor.OnPostprocessAllAssets                                                          :       16 samples, Peak.  4.58 ms (7.9x), Avg.   583 us, Total. 9.327 ms (0.0%)
+[Performance] AssetChangedListener.OnPostprocessAllAssets                                                                    :       16 samples, Peak.  2.83 ms (7.2x), Avg.   393 us, Total. 6.292 ms (0.0%)
+[Performance] SpeedTreePostProcessor.OnPostprocessAllAssets                                                                  :       16 samples, Peak.  1.25 ms (7.4x), Avg.   168 us, Total. 2.692 ms (0.0%)
+[Performance] TextAssetPostProcessor.OnPostprocessAllAssets                                                                  :       16 samples, Peak.  3.41 ms (7.8x), Avg.   437 us, Total. 6.984 ms (0.0%)
+[Performance] SyncVS.PostprocessSyncProject                                                                                  :        8 samples, Peak.  2.14 ms (6.9x), Avg.   310 us, Total. 2.476 ms (0.0%)
+[Performance] EditorApplication.projectChanged: UnityEditor.Audio.MixerEffectDefinitionReloader.OnProjectChanged             :        1 samples, Peak.   504 us (1.0x), Avg.   504 us, Total. 504.2 us (0.0%)
+[Performance] Application.ImportPackagesAndSetTemplateWhenCreatingProject                                                    :        1 samples, Peak.  48.9 ms (1.0x), Avg.  48.9 ms, Total. 48.89 ms (0.1%)
+[Performance] Application.SyncCurrentColorSpace                                                                              :        1 samples, Peak.   700 ns (1.0x), Avg.   700 ns, Total. 700.0 ns (0.0%)
+[Performance] Application.OnUsbDevicesChanged                                                                                :        1 samples, Peak.  12.8 ms (1.0x), Avg.  12.8 ms, Total. 12.77 ms (0.0%)
+[Performance] Application.AssetDatabase.SaveAssets                                                                           :        1 samples, Peak.  4.37 ms (1.0x), Avg.  4.37 ms, Total. 4.375 ms (0.0%)
+[Performance] BuilderAssetModificationProcessor.OnWillSaveAssets                                                             :        5 samples, Peak.   488 us (4.7x), Avg.   104 us, Total. 520.4 us (0.0%)
+[Performance] TerrainModificationProcessor.OnWillSaveAssets                                                                  :        5 samples, Peak.   844 us (5.0x), Avg.   170 us, Total. 850.3 us (0.0%)
+[Performance] Application.AssetInstanceCacheUpdate                                                                           :        1 samples, Peak.   300 ns (1.0x), Avg.   300 ns, Total. 300.0 ns (0.0%)
+[Performance] Application.UnityExtensions.Initialize                                                                         :        1 samples, Peak.   412 us (1.0x), Avg.   412 us, Total. 411.9 us (0.0%)
+[Performance] CodeEditorProjectSync.SyncEditorProject                                                                        :        1 samples, Peak.   122 us (1.0x), Avg.   122 us, Total. 122.4 us (0.0%)
+[Performance] Application.ExecuteStartups                                                                                    :        1 samples, Peak.  57.1 ms (1.0x), Avg.  57.1 ms, Total. 57.07 ms (0.2%)
+[Performance] Menu.RegisterMenuInterface                                                                                     :       26 samples, Peak.  1.20 us (4.1x), Avg.   296 ns, Total. 7.700 us (0.0%)
+[Performance] Gizmo.RebuildRenderers                                                                                         :        2 samples, Peak.  54.7 ms (1.4x), Avg.  38.4 ms, Total. 76.81 ms (0.2%)
+[Performance] Gizmo.AddGizmoRenderers                                                                                        :       38 samples, Peak.  1.78 ms (23.7x), Avg.  75.0 us, Total. 2.852 ms (0.0%)
+[Performance] Application.editorInitializingProject                                                                          :        1 samples, Peak.   146 ms (1.0x), Avg.   146 ms, Total. 146.4 ms (0.4%)
+[Performance] Application.InitializeMenu                                                                                     :        1 samples, Peak.  94.4 ms (1.0x), Avg.  94.4 ms, Total. 94.37 ms (0.3%)
+[Performance] Menu.RebuildAll                                                                                                :        1 samples, Peak.  94.3 ms (1.0x), Avg.  94.3 ms, Total. 94.35 ms (0.3%)
+[Performance] Menu.BuildRegisteredMenuInterfaces                                                                             :        1 samples, Peak.  87.2 ms (1.0x), Avg.  87.2 ms, Total. 87.21 ms (0.3%)
+[Performance] Menu.FilterMenuItem                                                                                            :      449 samples, Peak.  26.3 ms (444.5x), Avg.  59.2 us, Total. 26.59 ms (0.1%)
+[Performance] UpdateAllMenus                                                                                                 :        1 samples, Peak.   671 us (1.0x), Avg.   671 us, Total. 671.2 us (0.0%)
+[Performance] Menu.RebuildOSMainMenu                                                                                         :        3 samples, Peak.  6.54 ms (1.0x), Avg.  6.38 ms, Total. 19.13 ms (0.1%)
+[Performance] EditorSceneManager.sceneClosing: UnityEditor.SceneVisibilityManager.EditorSceneManagerOnSceneClosing           :        1 samples, Peak.   339 us (1.0x), Avg.   339 us, Total. 339.4 us (0.0%)
+[Performance] GUIView.RepaintAll.PlayerLoopController                                                                        :        1 samples, Peak.  6.60 us (1.0x), Avg.  6.60 us, Total. 6.600 us (0.0%)
+[Performance] EditorSceneManager.newSceneCreated: UnityEditor.SceneTemplate.SceneTemplateService.OnNewSceneCreated           :        1 samples, Peak.   309 us (1.0x), Avg.   309 us, Total. 309.4 us (0.0%)
+[Performance] EditorSceneManager.newSceneCreated: UnityEditor.SceneVisibilityManager.EditorSceneManagerOnNewSceneCreated     :        1 samples, Peak.   231 us (1.0x), Avg.   231 us, Total. 230.9 us (0.0%)
+[Performance] EditorSceneManager.newSceneCreated: UnityEditor.SceneManagement.StageNavigationManager.OnNewSceneCreated       :        1 samples, Peak.  73.2 us (1.0x), Avg.  73.2 us, Total. 73.20 us (0.0%)
+[Performance] Application.InvokeFinishedLoadingProject                                                                       :        1 samples, Peak.   806 us (1.0x), Avg.   806 us, Total. 806.1 us (0.0%)
+[Performance] ProcessService.OnProjectLoaded                                                                                 :        1 samples, Peak.  40.2 us (1.0x), Avg.  40.2 us, Total. 40.20 us (0.0%)
+[Performance] AssetDatabase.ImportAsset                                                                                      :        6 samples, Peak.   123 ms (1.5x), Avg.  84.6 ms, Total. 507.9 ms (1.5%)
+[Performance] BuildAssetBundles                                                                                              :        1 samples, Peak.  18.1 s (1.0x), Avg.  18.1 s, Total. 18.07 s (52.5%)
+[Performance] GenerateAssemblyTypeInfos                                                                                      :        2 samples, Peak.  1.05 ms (1.7x), Avg.   630 us, Total. 1.259 ms (0.0%)
+[Performance] AssetDatabase.Refresh                                                                                          :        2 samples, Peak.  3.24 ms (1.1x), Avg.  3.00 ms, Total. 5.990 ms (0.0%)
+[Performance] EditorApplication.quitting: callback in UnityEditor.TextCore.Text.EditorEventCallbacks                         :        1 samples, Peak.  2.14 ms (1.0x), Avg.  2.14 ms, Total. 2.141 ms (0.0%)
+[Performance] Application.Shutdown.PauseProfilerSession                                                                      :        1 samples, Peak.  59.8 us (1.0x), Avg.  59.8 us, Total. 59.80 us (0.0%)
+[Performance] Application.Shutdown.PauseAssetImportWorkers                                                                   :        1 samples, Peak.   163 us (1.0x), Avg.   163 us, Total. 162.9 us (0.0%)
+[Performance] Application.Shutdown.SaveAssets                                                                                :        1 samples, Peak.   279 us (1.0x), Avg.   279 us, Total. 278.9 us (0.0%)
+[Performance] Application.Shutdown.CleanupRenderPipeline                                                                     :        1 samples, Peak.  2.40 us (1.0x), Avg.  2.40 us, Total. 2.400 us (0.0%)
+[Performance] Application.Shutdown.StopPreloadManager                                                                        :        1 samples, Peak.  9.99 ms (1.0x), Avg.  9.99 ms, Total. 9.986 ms (0.0%)
+[Performance] Application.Shutdown.DestroyWorld                                                                              :        1 samples, Peak.   404 us (1.0x), Avg.   404 us, Total. 403.5 us (0.0%)
+[Performance] Application.Shutdown.CleanupAfterLoad                                                                          :        1 samples, Peak.  3.02 ms (1.0x), Avg.  3.02 ms, Total. 3.022 ms (0.0%)
+[Performance] Application.Shutdown.Progress                                                                                  :        1 samples, Peak.  20.0 us (1.0x), Avg.  20.0 us, Total. 20.00 us (0.0%)
+[Performance] Application.Shutdown.GICleanupManagers                                                                         :        1 samples, Peak.  3.49 ms (1.0x), Avg.  3.49 ms, Total. 3.491 ms (0.0%)
+[Performance] Application.Shutdown.MenuCleanupClass                                                                          :        1 samples, Peak.   148 us (1.0x), Avg.   148 us, Total. 148.0 us (0.0%)
+[Performance] Application.Shutdown.ADBSaveStateBeforeShutdown                                                                :        1 samples, Peak.  7.40 us (1.0x), Avg.  7.40 us, Total. 7.400 us (0.0%)
+[Performance] Application.Shutdown.RemoteShutdown                                                                            :        1 samples, Peak.  1000 ns (1.0x), Avg.  1000 ns, Total. 1000.0 ns (0.0%)
+[Performance] Application.Shutdown.CleanupVCProvider                                                                         :        1 samples, Peak.  23.8 us (1.0x), Avg.  23.8 us, Total. 23.80 us (0.0%)
+[Performance] Application.Shutdown.InputShutdown                                                                             :        1 samples, Peak.   295 us (1.0x), Avg.   295 us, Total. 295.1 us (0.0%)
+[Performance] Application.Shutdown.GizmoManagerDestroy                                                                       :        1 samples, Peak.   588 us (1.0x), Avg.   588 us, Total. 588.3 us (0.0%)
+[Performance] Application.Shutdown.ProfilerSession                                                                           :        1 samples, Peak.   810 us (1.0x), Avg.   810 us, Total. 810.4 us (0.0%)
+[Performance] Application.Shutdown.ReleaseGfxWindowOnAllGUIViews                                                             :        1 samples, Peak.   300 ns (1.0x), Avg.   300 ns, Total. 300.0 ns (0.0%)
+[Performance] Application.Shutdown.CleanupEngine                                                                             :        1 samples, Peak.   185 ms (1.0x), Avg.   185 ms, Total. 184.7 ms (0.5%)
+[Performance] Application.Shutdown.CleanupAssetDatabase                                                                      :        1 samples, Peak.  3.55 ms (1.0x), Avg.  3.55 ms, Total. 3.548 ms (0.0%)
+[Performance] Application.Shutdown.ScriptCompilationCleanUp                                                                  :        1 samples, Peak.  14.9 ms (1.0x), Avg.  14.9 ms, Total. 14.86 ms (0.0%)
+[Performance] Application.Shutdown.DestroyJobSystem                                                                          :        1 samples, Peak.   116 us (1.0x), Avg.   116 us, Total. 116.2 us (0.0%)
+[Performance] Application.Shutdown.CleanupPersistentManager                                                                  :        1 samples, Peak.   350 us (1.0x), Avg.   350 us, Total. 349.9 us (0.0%)
+[Performance] Application.Shutdown.CleanupAsyncReadManager                                                                   :        1 samples, Peak.   318 us (1.0x), Avg.   318 us, Total. 317.7 us (0.0%)
+[Performance] Application.Shutdown.CleanupProgressBar                                                                        :        1 samples, Peak.   400 ns (1.0x), Avg.   400 ns, Total. 400.0 ns (0.0%)
+[Performance] Application.Shutdown.CleanupMono                                                                               :        1 samples, Peak.  57.2 ms (1.0x), Avg.  57.2 ms, Total. 57.21 ms (0.2%)
+[Performance] Application.Shutdown.CleanupStdConverters                                                                      :        1 samples, Peak.  50.8 us (1.0x), Avg.  50.8 us, Total. 50.80 us (0.0%)
+[Performance] Application.Shutdown.UnloadAllPlatformSupportModuleNativeDlls                                                  :        1 samples, Peak.   700 ns (1.0x), Avg.   700 ns, Total. 700.0 ns (0.0%)
+[Performance] Application.Shutdown.UnloadAllPlatformSupportNativeLibraries                                                   :        1 samples, Peak.   100 ns (1.0x), Avg.   100 ns, Total. 100.0 ns (0.0%)
+[Performance] Application.Shutdown.CleanupAutoDocumentation                                                                  :        1 samples, Peak.   720 us (1.0x), Avg.   720 us, Total. 719.6 us (0.0%)
+[Performance] Application.Shutdown.ShaderNameManagerDestroy                                                                  :        1 samples, Peak.  63.8 us (1.0x), Avg.  63.8 us, Total. 63.80 us (0.0%)
+[Performance] Application.Shutdown.CleanupCacheServer                                                                        :        1 samples, Peak.   100 ns (1.0x), Avg.   100 ns, Total. 100.0 ns (0.0%)
+[Performance] Application.Shutdown.Virtualization_Shutdown                                                                   :        1 samples, Peak.   300 ns (1.0x), Avg.   300 ns, Total. 300.0 ns (0.0%)
+[Performance] Application.Shutdown.DevConnections                                                                            :        1 samples, Peak.   205 us (1.0x), Avg.   205 us, Total. 204.9 us (0.0%)
+Exiting batchmode successfully now!
+Exiting without the bug reporter. Application will terminate with return code 0
