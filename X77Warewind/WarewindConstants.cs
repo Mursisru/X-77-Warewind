@@ -23,6 +23,8 @@ namespace Warewind
         public const string PiledriverNukeToken = "tacNuke";
         public const float BayBottomSlackM = 0.12f;
         public const float BayCenterLiftExtraM = 0.15f;
+        public const float BayAftInsetM = 0.35f;
+        public const float BayVisualScaleMult = 0.72f;
 
         public const string ShellMissileKey = "AAM2";
         public const string ShellMissileKeyAlt = "AAM2_single";
@@ -32,7 +34,7 @@ namespace Warewind
         public const float LaunchMassKg = 2800f;
         public const float Stage1DryMassKg = 420f;
         public const float BlastYieldKg = 700f;
-        public const float Cost = 8.5f;
+        public const float Cost = 44f;
         public const float RadarSize = 0.5f;
         public const float MountClearanceM = 0.05f;
         public const float MountEmptyMassKg = 40f;
@@ -54,19 +56,41 @@ namespace Warewind
 
         public const float CruiseAltMaxM = 50000f;
         public const float CruiseAltMinM = 1500f;
-        public const float DiveCommitDistMaxM = 35000f;
+        public const float DiveCommitDistMinM = 12000f;
+        public const float DiveCommitDistMaxM = 70000f;
+        public const float DiveAngleMinDeg = 45f;
+        public const float DiveAngleMaxDeg = 60f;
+        public const float DivePullLeadM = 8000f;
         public const float ShallowLoftRangeM = 35000f;
         public const float LoftPitchMaxDeg = 48f;
         public const float LoftPitchShallowDeg = 18f;
-        public const float LoftPitchMinDeg = 2f;
+        /// <summary>Target astern on early phases — pitch up through the vertical toward tgt azimuth.</summary>
+        public const float OverTopPitchDeg = 68f;
+        public const float OverTopAimMaxOffDeg = 78f;
+        public const float TargetBehindDot = 0.15f;
         public const float DropPitchDeg = 12f;
-        public const float ClimbPredictS = 2.5f;
         public const float AimLookaheadM = 10000f;
-        public const float DivePitchDeg = 55f;
         public const float TerminalDirectDistM = 8000f;
         public const float SoftKillTimeoutS = 900f;
-        public const float OvershootPitchDeg = -30f;
         public const float CruiseThrottle = 0.65f;
+        public const float LevelBandM = 2500f;
+        public const float LevelVyGain = 0.18f;
+        public const float LevelClimbDamp = 0.55f;
+        public const float CruisePitchMaxDeg = 10f;
+        public const float PitchSlewLoftDegS = 6f;
+        public const float PitchSlewCruiseDegS = 4f;
+        public const float PitchSlewCatchDegS = 20f;
+        public const float CruiseYawSlewDegS = 1.0f;
+        public const float AimMaxOffMidDeg = 35f;
+        public const float AimMaxOffCruiseDeg = 8f;
+        public const float AimMaxOffDiveDeg = 62f;
+        public const float TvcAltM = 18000f;
+        public const float TvcBodyRateDegS = 14f;
+        public const float TvcTorque = 14f;
+        /// <summary>At M6 vanilla a_perp/v ≈ 0.3°/s — boost so vel follows nose while thrusting.</summary>
+        public const float CrossThrustMinOffDeg = 3f;
+        public const float CrossThrustFullOffDeg = 18f;
+        public const float CrossThrustMaxDegS = 18f;
 
         public const float BoosterTwr = 3.0f;
         public const float BoosterFuelKg = 720f;
@@ -84,7 +108,16 @@ namespace Warewind
         public const float MachHigh = 8f;
         public const float Mach5BelowAltM = 12000f;
         public const float Mach8AboveAltM = 35000f;
-        public const float HudMaxRangeM = 220000f;
+        /// <summary>Design max range — HUD + encyclopedia via CalcProxy tune.</summary>
+        public const float DesignRangeM = 450000f;
+        public const float HudFallbackRangeM = DesignRangeM;
+        public const float EncyclopediaMinRangeM = 15000f;
+        public const float TotalBurnS = BoosterBurnS + SustainerBurnS;
+        /// <summary>Typical bomber launch for CalcRange / encyclopedia display.</summary>
+        public const float CalcRefLaunchSpeedMps = 250f;
+        public const float CalcRefLaunchAltM = 10000f;
+        public const float CalcRefTargetAltM = 0f;
+        public const float CalcRefTargetDistM = 100000f;
 
         public const float Stage1DestroyS = 30f;
         public const float ArmAfterS = 3f;
@@ -111,6 +144,8 @@ namespace Warewind
         public const float ThinAirGCap = 22f;
         public const float ThinAirTurnCapDeg = 24f;
         public const float ThinAirTorqueCap = 20f;
+        public const float VacuumGCap = 55f;
+        public const float VacuumTurnCapDeg = 28f;
 
         public const float BodyCd = 0.28f;
         public const float BodyAreaM2 = 0.95f;

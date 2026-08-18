@@ -19,7 +19,7 @@ namespace Warewind.Patches
             weaponMount.prefab.SetActive(true);
         }
 
-        private static void Postfix(Hardpoint __instance, WeaponMount weaponMount, GameObject __result)
+        private static void Postfix(Hardpoint __instance, Aircraft aircraft, WeaponMount weaponMount, GameObject __result)
         {
             if (!WarewindBootstrap.IsOurMount(weaponMount) || __result == null)
                 return;
@@ -30,8 +30,8 @@ namespace Warewind.Patches
             }
 
             bool bay = __instance != null && __instance.bayDoors != null && __instance.bayDoors.Length > 0;
-            PrefabFactory.ActivateMountedInstance(__result, internalBay: false);
-            if (bay)
+            PrefabFactory.ActivateMountedInstance(__result, internalBay: bay);
+            if (bay && __instance != null && WarewindBayFit.ShouldRefitAlkyonCentralBay(aircraft, __instance))
                 WarewindVisualStamp.RefitBay(__result);
         }
     }
@@ -347,6 +347,8 @@ namespace Warewind.Patches
             AircraftSelectionDisplay.SetTmp(__instance, "yield", UnitConverter.YieldReading(WarewindConstants.BlastYieldKg) + " TNT");
             AircraftSelectionDisplay.SetTmp(__instance, "mass", UnitConverter.WeightReading(WarewindConstants.LaunchMassKg));
             AircraftSelectionDisplay.SetTmp(__instance, "cost", UnitConverter.ValueReading(WarewindConstants.Cost));
+            AircraftSelectionDisplay.SetTmp(__instance, "rcs", string.Format("{0}", WarewindConstants.RadarSize));
+            Warewind.Runtime.WarewindEncyclopediaStats.ApplyMissilePanels(__instance);
         }
     }
 
@@ -368,9 +370,7 @@ namespace Warewind.Patches
             info.bomb = false;
             info.glideBomb = false;
             info.overHorizon = true;
-            TargetRequirements tr = info.targetRequirements;
-            tr.maxRange = WarewindConstants.HudMaxRangeM;
-            info.targetRequirements = tr;
+            Warewind.Runtime.WarewindEncyclopediaStats.ApplyTargetRequirements(info);
             if (WarewindBootstrap.Definition?.unitPrefab != null)
                 info.weaponPrefab = WarewindBootstrap.Definition.unitPrefab;
             __instance.mountName = WarewindConstants.MountDisplayName;
@@ -389,64 +389,6 @@ namespace Warewind.Patches
                 return;
             WarewindPlugin.ModLog?.LogInfo(
                 $"Warewind spawn prefab '{fly.name}' (stock AAM2, no custom PrefabHash).");
-        }
-    }
-
-    [HarmonyPatch(typeof(HUDMissileState), "CalcWeaponRange")]
-    internal static class WarewindHudRangePatch
-    {
-        private static readonly System.Reflection.FieldInfo? WeaponInfoField =
-            AccessTools.Field(typeof(HUDMissileState), "weaponInfo");
-        private static readonly System.Reflection.FieldInfo? AircraftField =
-            AccessTools.Field(typeof(HUDMissileState), "aircraft");
-        private static readonly System.Reflection.FieldInfo? MaxTargetDistField =
-            AccessTools.Field(typeof(HUDMissileState), "maxTargetDist");
-        private static readonly System.Reflection.FieldInfo? MaxTargetSpeedField =
-            AccessTools.Field(typeof(HUDMissileState), "maxTargetSpeed");
-        private static readonly System.Reflection.FieldInfo? KnownPosField =
-            AccessTools.Field(typeof(HUDMissileState), "knownPos");
-        private static readonly System.Reflection.FieldInfo? MaxRangeField =
-            AccessTools.Field(typeof(HUDMissileState), "maxRange");
-        private static readonly System.Reflection.FieldInfo? NoEscapeField =
-            AccessTools.Field(typeof(HUDMissileState), "noEscapeRange");
-        private static readonly System.Reflection.FieldInfo? LastCalcField =
-            AccessTools.Field(typeof(HUDMissileState), "lastWeaponRangeCalc");
-        private static readonly System.Reflection.FieldInfo? TargetListField =
-            AccessTools.Field(typeof(HUDMissileState), "targetList");
-        private static readonly System.Reflection.FieldInfo? StationField =
-            AccessTools.Field(typeof(HUDMissileState), "weaponStation");
-
-        private static bool Prefix(HUDMissileState __instance)
-        {
-            if (WeaponInfoField?.GetValue(__instance) is not WeaponInfo wi || !WarewindBootstrap.IsOurInfo(wi))
-                return true;
-
-            if (LastCalcField?.GetValue(__instance) is float last &&
-                Time.timeSinceLevelLoad - last < 1f)
-                return false;
-
-            if (StationField?.GetValue(__instance) is WeaponStation st && st.Ammo == 0)
-                return false;
-            if (TargetListField?.GetValue(__instance) is System.Collections.IList list && list.Count == 0)
-                return false;
-
-            if (AircraftField?.GetValue(__instance) is not Aircraft ac || ac == null)
-                return true;
-
-            float tgtDist = MaxTargetDistField?.GetValue(__instance) is float d ? d : 0f;
-            float tgtSpd = MaxTargetSpeedField?.GetValue(__instance) is float s ? s : 0f;
-            float tgtAlt = ac.GlobalPosition().y;
-            if (KnownPosField?.GetValue(__instance) is GlobalPosition gp)
-                tgtAlt = gp.y;
-
-            float nez;
-            float range = WarewindRange.Calc(
-                ac.speed, ac.GlobalPosition().y, tgtAlt, tgtDist, tgtSpd, out nez);
-
-            MaxRangeField?.SetValue(__instance, range);
-            NoEscapeField?.SetValue(__instance, nez);
-            LastCalcField?.SetValue(__instance, Time.timeSinceLevelLoad);
-            return false;
         }
     }
 

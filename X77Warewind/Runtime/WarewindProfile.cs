@@ -2,10 +2,7 @@ using UnityEngine;
 
 namespace Warewind
 {
-    /// <summary>
-    /// Range → planned cruise altitude (hint, not a mandatory gate).
-    /// Short shots stay low; dive can start from any phase when close enough.
-    /// </summary>
+    /// <summary>Dive at 45–60° onto the target. Commit = alt/tan(45°) + pull lead (~58km from 50km, not 124).</summary>
     internal static class WarewindProfile
     {
         internal static void Lock(WarewindFlight f, Vector3 launchPos, Vector3 targetPos)
@@ -16,7 +13,7 @@ namespace Warewind
             float range = Horiz(launchPos, targetPos);
             f.LockRangeM = range;
             f.CruiseAltM = CruiseForRange(range);
-            f.LoftEnterAltM = Mathf.Max(f.CruiseAltM * 0.85f, f.CruiseAltM - 1500f);
+            f.LoftEnterAltM = Mathf.Max(f.CruiseAltM * 0.96f, f.CruiseAltM - 400f);
             f.LevelStartAltM = Mathf.Max(500f, f.CruiseAltM * 0.55f);
             f.DiveCommitDistM = DiveCommitForRange(range, f.CruiseAltM);
             f.ShallowLoft = range < WarewindConstants.ShallowLoftRangeM;
@@ -33,9 +30,16 @@ namespace Warewind
             Lock(f, pos, tgt);
         }
 
-        /// <summary>
-        /// Close: 1.5–6 km. Mid: 8–25. Long: 30–50. Never force 12+ km on 20 km shots.
-        /// </summary>
+        /// <summary>Horiz dist to start dive: 45° line from cruise alt + lead to pull the nose down.</summary>
+        internal static float GlideDistM(float altM)
+        {
+            float a = Mathf.Max(500f, altM);
+            float tan = Mathf.Tan(WarewindConstants.DiveAngleMinDeg * Mathf.Deg2Rad);
+            if (tan < 0.2f)
+                tan = 0.2f;
+            return a / tan + WarewindConstants.DivePullLeadM;
+        }
+
         internal static float CruiseForRange(float rangeM)
         {
             float r = Mathf.Max(0f, rangeM);
@@ -56,11 +60,9 @@ namespace Warewind
 
         internal static float DiveCommitForRange(float rangeM, float cruiseAltM)
         {
-            // Open dive early — do not wait for echelon. Short shots dive sooner.
-            float fromRange = rangeM * 0.45f;
-            float fromAlt = cruiseAltM * 1.1f;
-            float commit = Mathf.Min(fromRange, Mathf.Max(fromAlt, rangeM * 0.22f));
-            return Mathf.Clamp(commit, 5000f, WarewindConstants.DiveCommitDistMaxM);
+            float glide = GlideDistM(cruiseAltM);
+            float commit = Mathf.Min(glide, rangeM * 0.55f);
+            return Mathf.Clamp(commit, WarewindConstants.DiveCommitDistMinM, WarewindConstants.DiveCommitDistMaxM);
         }
 
         private static float Horiz(Vector3 a, Vector3 b)

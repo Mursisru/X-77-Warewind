@@ -53,6 +53,7 @@ namespace Warewind.Runtime
             {
                 SnapFullModelCenterToParentOrigin(vis);
                 LiftBayIntoFuselage(vis);
+                InsetBayAft(vis);
             }
             else
             {
@@ -156,6 +157,48 @@ namespace Warewind.Runtime
             vis.localPosition += liftParent;
             WarewindPlugin.ModLog?.LogInfo(
                 $"VisualFit bay lift={lift:F2}m hardpointY={hardpointY:F1} bottomWas={bottomY:F1}");
+        }
+
+        /// <summary>After COM@hardpoint, shift forward so the aft end stays inside the bay.</summary>
+        private static void InsetBayAft(Transform vis)
+        {
+            if (vis.parent == null)
+                return;
+            if (!TryEncapsulateWorld(vis, out Bounds world, includeDisabled: true))
+                return;
+
+            Vector3 fwd = vis.parent.forward;
+            Vector3 hp = vis.parent.position;
+            Vector3 c = world.center;
+            Vector3 ext = world.extents;
+            Vector3[] corners =
+            {
+                c + new Vector3(-ext.x, -ext.y, -ext.z),
+                c + new Vector3(-ext.x, -ext.y, ext.z),
+                c + new Vector3(-ext.x, ext.y, -ext.z),
+                c + new Vector3(-ext.x, ext.y, ext.z),
+                c + new Vector3(ext.x, -ext.y, -ext.z),
+                c + new Vector3(ext.x, -ext.y, ext.z),
+                c + new Vector3(ext.x, ext.y, -ext.z),
+                c + new Vector3(ext.x, ext.y, ext.z)
+            };
+
+            float minProj = float.MaxValue;
+            for (int i = 0; i < corners.Length; i++)
+            {
+                float p = Vector3.Dot(corners[i] - hp, fwd);
+                if (p < minProj)
+                    minProj = p;
+            }
+
+            float aftExtent = -minProj;
+            if (aftExtent <= WarewindConstants.BayAftInsetM)
+                return;
+
+            float shift = aftExtent - WarewindConstants.BayAftInsetM;
+            vis.position += fwd * shift;
+            WarewindPlugin.ModLog?.LogInfo(
+                $"VisualFit bay aft inset shift={shift:F2}m aftWas={aftExtent:F2}m");
         }
 
         private static Quaternion AxisToForward(int axis)

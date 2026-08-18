@@ -150,15 +150,14 @@ namespace Warewind.UnityBake
             if (!AssetDatabase.IsValidFolder(matFolder))
                 AssetDatabase.CreateFolder($"{assetsRoot}/Materials", "Warewind");
 
+            Dictionary<string, Look> looks = LoadLookJson($"{assetsRoot}/Textures/Warewind/warewind_look.json");
+
             Dictionary<string, Material> bakedByBlender = new Dictionary<string, Material>(StringComparer.OrdinalIgnoreCase);
             Dictionary<string, Material> fbxMats = new Dictionary<string, Material>(StringComparer.OrdinalIgnoreCase);
-            Dictionary<string, Texture> fbxTex = new Dictionary<string, Texture>(StringComparer.OrdinalIgnoreCase);
             foreach (UnityEngine.Object sub in AssetDatabase.LoadAllAssetsAtPath(fbxPath))
             {
                 if (sub is Material mat)
                     fbxMats[mat.name] = mat;
-                else if (sub is Texture tex)
-                    fbxTex[tex.name] = tex;
             }
 
             foreach (Renderer r in root.GetComponentsInChildren<Renderer>(true))
@@ -175,7 +174,7 @@ namespace Warewind.UnityBake
                         fbxMats.TryGetValue(meshName, out imported);
 
                     string blenderName = imported != null && !string.IsNullOrEmpty(imported.name)
-                        ? imported.name
+                        ? StripInstance(imported.name)
                         : meshName + "_" + i;
                     if (bakedByBlender.TryGetValue(blenderName, out Material shared))
                     {
@@ -198,23 +197,7 @@ namespace Warewind.UnityBake
                     if (mat.shader == null || mat.shader.name.IndexOf("Error", StringComparison.OrdinalIgnoreCase) >= 0)
                         mat.shader = lit;
 
-                    Texture importAlbedo = imported != null ? PeekAlbedo(imported) : PeekAlbedo(mat);
-                    if (importAlbedo != null)
-                        WriteAlbedo(mat, importAlbedo);
-                    else
-                    {
-                        foreach (KeyValuePair<string, Texture> kv in fbxTex)
-                        {
-                            if (kv.Key.IndexOf(blenderName, StringComparison.OrdinalIgnoreCase) >= 0 ||
-                                kv.Key.IndexOf(meshName, StringComparison.OrdinalIgnoreCase) >= 0)
-                            {
-                                WriteAlbedo(mat, kv.Value);
-                                break;
-                            }
-                        }
-                    }
-
-                    RestoreBlenderMetallic(mat, blenderName);
+                    RestoreBlenderLook(mat, blenderName, looks);
                     ApplyWarewindDiskMaps(mat, blenderName, assetsRoot);
 
                     if (mat.HasProperty("_EmissionColor"))
@@ -232,6 +215,16 @@ namespace Warewind.UnityBake
             PrefabUtility.SaveAsPrefabAsset(root, prefabPath);
             UnityEngine.Object.DestroyImmediate(root);
             Debug.Log($"MissilePack: WarewindVisual from '{fbxPath}'");
+        }
+
+        private static string StripInstance(string name)
+        {
+            if (string.IsNullOrEmpty(name))
+                return name;
+            const string inst = " (Instance)";
+            if (name.EndsWith(inst, StringComparison.OrdinalIgnoreCase))
+                return name.Substring(0, name.Length - inst.Length);
+            return name;
         }
 
         private static string Sanitize(string name)
@@ -269,14 +262,102 @@ namespace Warewind.UnityBake
             return AssetDatabase.GUIDToAssetPath(guids[0]);
         }
 
-        // Unity Phong import drops Principled metallic. Values from X-75-Warewind.blend.
-        private static void RestoreBlenderMetallic(Material mat, string blenderName)
+        [Serializable]
+        private class LookRoot
         {
-            if (mat == null || !mat.HasProperty("_Metallic"))
+            public LookEntry[] mats;
+        }
+
+        [Serializable]
+        private class LookEntry
+        {
+            public string name;
+            public float colR;
+            public float colG;
+            public float colB;
+            public float colA;
+            public float metallic;
+            public float roughness;
+            public int baseColorLinked;
+        }
+
+        private struct Look
+        {
+            public Color baseColor;
+            public float metallic;
+            public float roughness;
+            public bool hasColor;
+            public bool clearAlbedo;
+        }
+
+        private static Dictionary<string, Look> LoadLookJson(string assetPath)
+        {
+            var map = new Dictionary<string, Look>(StringComparer.OrdinalIgnoreCase);
+            string abs = Path.GetFullPath(Path.Combine(Application.dataPath, "..", assetPath.Replace('/', Path.DirectorySeparatorChar)));
+            if (!File.Exists(abs))
+                return map;
+            try
+            {
+                LookRoot root = JsonUtility.FromJson<LookRoot>(File.ReadAllText(abs));
+                if (root?.mats == null)
+                    return map;
+                for (int i = 0; i < root.mats.Length; i++)
+                {
+                    LookEntry e = root.mats[i];
+                    if (e == null || string.IsNullOrEmpty(e.name))
+                        continue;
+                    var look = new Look
+                    {
+                        metallic = e.metallic,
+                        roughness = e.roughness,
+                        hasColor = true,
+                        clearAlbedo = e.baseColorLinked == 0,
+                        baseColor = new Color(e.colR, e.colG, e.colB, e.colA > 0f ? e.colA : 1f)
+                    };
+                    map[e.name] = look;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.LogWarning("Warewind look json: " + ex.Message);
+            }
+            return map;
+        }
+
+        private static void RestoreBlenderLook(Material mat, string blenderName, Dictionary<string, Look> looks)
+        {
+            if (mat == null)
                 return;
-            bool glossy = !string.IsNullOrEmpty(blenderName) &&
-                          blenderName.IndexOf("GlossyBlackMetal", StringComparison.OrdinalIgnoreCase) >= 0;
-            mat.SetFloat("_Metallic", glossy ? 1f : 0f);
+            Look look = default;
+            if (looks == null || !looks.TryGetValue(blenderName, out look))
+            {
+                look = new Look
+                {
+                    metallic = blenderName != null &&
+                               blenderName.IndexOf("GlossyBlackMetal", StringComparison.OrdinalIgnoreCase) >= 0
+                        ? 1f : 0f,
+                    roughness = 0.5f,
+                    hasColor = false,
+                    clearAlbedo = false
+                };
+            }
+
+            if (look.clearAlbedo)
+                ClearAlbedo(mat);
+            if (look.hasColor)
+            {
+                if (mat.HasProperty("_Color"))
+                    mat.SetColor("_Color", look.baseColor);
+                if (mat.HasProperty("_BaseColor"))
+                    mat.SetColor("_BaseColor", look.baseColor);
+            }
+            if (mat.HasProperty("_Metallic"))
+                mat.SetFloat("_Metallic", look.metallic);
+            float smooth = Mathf.Clamp01(1f - look.roughness);
+            if (mat.HasProperty("_Glossiness"))
+                mat.SetFloat("_Glossiness", smooth);
+            if (mat.HasProperty("_Smoothness"))
+                mat.SetFloat("_Smoothness", smooth);
         }
 
         /// <summary>
@@ -404,43 +485,25 @@ namespace Warewind.UnityBake
             imp.weldVertices = false;
             imp.meshOptimizationFlags = (MeshOptimizationFlags)0;
             imp.importNormals = ModelImporterNormals.Import;
+            imp.importTangents = ModelImporterTangents.CalculateMikk;
             imp.preserveHierarchy = true;
+            imp.addCollider = false;
+            imp.importLights = false;
+            imp.importCameras = false;
+            imp.animationType = ModelImporterAnimationType.None;
+            imp.useFileScale = true;
+            imp.globalScale = 1f;
             imp.SaveAndReimport();
         }
 
-        private static bool IsKozuchName(string name)
-        {
-            if (string.IsNullOrEmpty(name))
-                return false;
-            return name.IndexOf("Kozuch", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                   name.IndexOf("Кожух", StringComparison.OrdinalIgnoreCase) >= 0;
-        }
-
-        private static Texture PeekAlbedo(Material mat)
+        private static void ClearAlbedo(Material mat)
         {
             if (mat == null)
-                return null;
+                return;
             if (mat.HasProperty("_MainTex"))
-            {
-                Texture t = mat.GetTexture("_MainTex");
-                if (t != null)
-                    return t;
-            }
+                mat.SetTexture("_MainTex", null);
             if (mat.HasProperty("_BaseMap"))
-            {
-                Texture t = mat.GetTexture("_BaseMap");
-                if (t != null)
-                    return t;
-            }
-            return null;
-        }
-
-        private static void WriteAlbedo(Material mat, Texture tex)
-        {
-            if (mat.HasProperty("_MainTex"))
-                mat.SetTexture("_MainTex", tex);
-            if (mat.HasProperty("_BaseMap"))
-                mat.SetTexture("_BaseMap", tex);
+                mat.SetTexture("_BaseMap", null);
         }
     }
 }

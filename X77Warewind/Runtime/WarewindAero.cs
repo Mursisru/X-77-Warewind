@@ -91,9 +91,31 @@ namespace Warewind
                 torque = Mathf.Min(torque, WarewindConstants.ThinAirTorqueCap);
             }
 
+            float alt = missile.transform.position.y - Datum.LocalSeaY;
+            WarewindFlight? f = missile.GetComponent<WarewindFlight>();
+            if (alt >= WarewindConstants.TvcAltM &&
+                f != null && f.Phase is WarewindPhase.Cruise or WarewindPhase.Dive)
+            {
+                float sp = missile.rb != null ? missile.rb.velocity.magnitude : 0f;
+                float omega = WarewindConstants.TvcBodyRateDegS * Mathf.Deg2Rad;
+                float gFromTvc = omega * Mathf.Max(sp, 1f) / WarewindConstants.GravityMps2;
+                g = Mathf.Min(Mathf.Max(g, gFromTvc), WarewindConstants.VacuumGCap);
+                turn = Mathf.Max(turn, WarewindConstants.TvcBodyRateDegS);
+                turn = Mathf.Min(turn, WarewindConstants.VacuumTurnCapDeg);
+                torque = Mathf.Max(torque, WarewindConstants.TvcTorque);
+            }
+
             GLimit?.SetValue(missile, g);
             MaxTurn?.SetValue(missile, turn);
             missile.SetTorque(torque, turn);
+
+            if (f != null && f.Phase == WarewindPhase.Cruise)
+            {
+                Upright?.SetValue(missile, 0f);
+                DampYaw(missile);
+            }
+            else
+                Upright?.SetValue(missile, WarewindConstants.UprightPreference);
 
             if (forceLog || stage != _lastLoggedStage)
             {
@@ -101,6 +123,16 @@ namespace Warewind
                 WarewindPlugin.ModLog?.LogInfo(
                     $"Warewind aero stage={stage} gLimit={g:F0} turn={turn:F0} torque={torque:F1} rho={rho:F3}");
             }
+        }
+
+        private static void DampYaw(Missile missile)
+        {
+            if (missile.rb == null)
+                return;
+            Vector3 w = missile.rb.angularVelocity;
+            Vector3 local = missile.transform.InverseTransformVector(w);
+            local.y *= 0.25f;
+            missile.rb.angularVelocity = missile.transform.TransformVector(local);
         }
 
         private static void DampSpin(Missile missile)

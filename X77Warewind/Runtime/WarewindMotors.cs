@@ -62,6 +62,7 @@ namespace Warewind
             WriteFloat(booster, "burnTime", WarewindConstants.BoosterBurnS);
             WriteFloat(booster, "topSpeed", WarewindConstants.BoosterTopSpeedMps);
             WritePrivateFloat(booster, "delayTimer", WarewindConstants.MotorDelayS);
+            WritePrivateFloat(booster, "thrustVectoring", 0f);
 
             float sustainMass = Mathf.Max(800f, WarewindConstants.LaunchMassKg - WarewindConstants.Stage1DryMassKg - WarewindConstants.BoosterFuelKg * 0.5f);
             // Fixed design TWR — never inflate from donor (vacuum runaway).
@@ -71,6 +72,7 @@ namespace Warewind
             WriteFloat(sustain, "burnTime", WarewindConstants.SustainerBurnS);
             WriteFloat(sustain, "topSpeed", WarewindConstants.SustainerTopSpeedMps);
             WritePrivateFloat(sustain, "delayTimer", 0f);
+            WritePrivateFloat(sustain, "thrustVectoring", 0f);
 
             dst.SetValue(booster, 0);
             dst.SetValue(sustain, 1);
@@ -112,6 +114,25 @@ namespace Warewind
             float sp = v.magnitude;
             if (sp > top && top > 1f)
                 missile.rb.velocity = v * (top / sp);
+        }
+
+        internal static bool HasFuel(Missile missile)
+        {
+            if (missile == null || MotorsField == null)
+                return false;
+            Array? motors = MotorsField.GetValue(missile) as Array;
+            if (motors == null || motors.Length == 0)
+                return false;
+            int stage = MotorStage(missile);
+            if (stage < 0)
+                stage = 0;
+            for (int i = stage; i < motors.Length; i++)
+            {
+                object? m = motors.GetValue(i);
+                if (m != null && ReadFloat(m, "fuelMass", 0f) > 0.05f)
+                    return true;
+            }
+            return false;
         }
 
         internal static float Stage0Fuel(Missile missile)

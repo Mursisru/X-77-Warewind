@@ -33,7 +33,7 @@ $wwTex = ".\UnityBake\Assets\MissilePack\Textures\Warewind"
 if (Test-Path -LiteralPath $wwTex) {
   $wwDst = Join-Path $deploy "Textures\Warewind"
   New-Item -ItemType Directory -Force -Path $wwDst | Out-Null
-  Copy-Item -LiteralPath (Join-Path $wwTex "*") -Destination $wwDst -Force
+  Copy-Item -LiteralPath (Join-Path $wwTex "*.png") -Destination $wwDst -Force
 }
 
 Write-Host "Deployed to $deploy"

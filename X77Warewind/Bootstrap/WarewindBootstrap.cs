@@ -41,6 +41,7 @@ namespace Warewind
                 WarewindEw.Cache(enc);
                 WarewindMotorFx.CaptureTbm(enc);
                 WarewindBlast.CaptureTbm(enc);
+                WarewindCalcProxy.Init(enc);
 
                 MissileDefinition? aam = ResolveAam(enc);
                 if (aam?.unitPrefab != null)
@@ -310,10 +311,10 @@ namespace Warewind
             }
 
             TargetRequirements tr = info.targetRequirements;
-            tr.maxRange = WarewindConstants.HudMaxRangeM;
             tr.minAltitude = -200f;
             tr.maxAltitude = 80000f;
             info.targetRequirements = tr;
+            Warewind.Runtime.WarewindEncyclopediaStats.ApplyTargetRequirements(info);
 
             info.weaponName = WarewindConstants.WeaponInfoName;
             info.shortName = WarewindConstants.ShortName;

@@ -42,6 +42,11 @@ namespace Warewind
         internal Transform? Engine1;
         internal Transform? Engine2;
         internal Transform? EwDummy;
+        internal Vector3 DesiredDir = Vector3.forward;
+        internal Vector3 CruiseHeading;
+        internal bool CruiseHeadingSet;
+        internal float PitchCmd = WarewindConstants.DropPitchDeg;
+        internal bool OverTopActive;
         internal readonly List<Transform> FlareSockets = new List<Transform>(4);
 
         internal void ClearFlares() => FlareSockets.Clear();

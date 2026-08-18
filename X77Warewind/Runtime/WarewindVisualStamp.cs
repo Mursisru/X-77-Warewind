@@ -83,7 +83,7 @@ namespace Warewind
                 VisualMountSnap.FullModelCenter,
                 WarewindConstants.AttachPylonAliases,
                 0f,
-                WarewindConstants.VisualScaleMult,
+                WarewindConstants.BayVisualScaleMult,
                 WarewindConstants.Stage1Aliases,
                 WarewindConstants.Stage2Aliases);
             VisualMaterials.ApplyFbxLook(vis.gameObject);
