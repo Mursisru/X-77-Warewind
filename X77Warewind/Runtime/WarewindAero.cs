@@ -64,6 +64,7 @@ namespace Warewind
             if (missile == null)
                 return;
             ApplyStageLimits(missile, forceLog: false);
+            KillBank(missile);
             DampSpin(missile);
         }
 
@@ -114,6 +115,12 @@ namespace Warewind
                 Upright?.SetValue(missile, 0f);
                 DampYaw(missile);
             }
+            else if (f != null && (f.Phase == WarewindPhase.Loft || f.Phase == WarewindPhase.Dive))
+            {
+                Upright?.SetValue(missile, 0f);
+                if (f.Phase == WarewindPhase.Loft)
+                    DampLoft(missile);
+            }
             else
                 Upright?.SetValue(missile, WarewindConstants.UprightPreference);
 
@@ -133,6 +140,41 @@ namespace Warewind
             Vector3 local = missile.transform.InverseTransformVector(w);
             local.y *= 0.25f;
             missile.rb.angularVelocity = missile.transform.TransformVector(local);
+        }
+
+        private static void DampLoft(Missile missile)
+        {
+            if (missile.rb == null)
+                return;
+            Vector3 w = missile.rb.angularVelocity;
+            Vector3 local = missile.transform.InverseTransformVector(w);
+            local.x *= 0.38f;
+            local.y *= 0.32f;
+            local.z = 0f;
+            missile.rb.angularVelocity = missile.transform.TransformVector(local);
+        }
+
+        /// <summary>Strip launch bank — wings level to world up, keep pitch/yaw.</summary>
+        private static void KillBank(Missile missile)
+        {
+            if (missile?.rb == null)
+                return;
+            Transform t = missile.transform;
+            Vector3 fwd = t.forward;
+            if (fwd.sqrMagnitude < 0.01f)
+                return;
+
+            Vector3 levelUp = Vector3.ProjectOnPlane(Vector3.up, fwd);
+            if (levelUp.sqrMagnitude < 0.0001f)
+                return;
+            levelUp.Normalize();
+            Quaternion want = Quaternion.LookRotation(fwd, levelUp);
+            t.rotation = Quaternion.Slerp(t.rotation, want, WarewindConstants.BankKillRate);
+
+            Vector3 w = missile.rb.angularVelocity;
+            Vector3 local = t.InverseTransformVector(w);
+            local.z = 0f;
+            missile.rb.angularVelocity = t.TransformVector(local);
         }
 
         private static void DampSpin(Missile missile)

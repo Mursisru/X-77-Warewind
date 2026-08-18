@@ -16,6 +16,30 @@ namespace Warewind.Runtime
     /// </summary>
     internal static class VisualFit
     {
+        /// <summary>Internal bay: rescale + center/lift; forward inset only on Alkyon central bay.</summary>
+        internal static void ApplyBayFit(Transform vis, float bayScaleMult, bool forwardInset, float sinkM = 0f)
+        {
+            if (vis == null)
+                return;
+
+            EnsureVisualRenderersOn(vis);
+            float s = Mathf.Max(0.05f, bayScaleMult);
+            vis.localScale = new Vector3(s, s, s);
+            SnapFullModelCenterToParentOrigin(vis);
+            LiftBayIntoFuselage(vis);
+            NudgeBayUp(vis);
+            if (sinkM > 0.001f)
+                SinkBay(vis, sinkM);
+            if (forwardInset)
+                InsetBayAft(vis);
+
+            if (TryEncapsulateWorld(vis, out Bounds world, includeDisabled: true))
+            {
+                WarewindPlugin.ModLog?.LogInfo(
+                    $"VisualFit bay-fit '{vis.name}' scale={s:F2} rot={vis.localRotation.eulerAngles} bounds={world.size}");
+            }
+        }
+
         /// <summary>X-77: FBX size × scaleMult, longest→+Z, aft mesh behind nose, snap attach.</summary>
         internal static void ApplyKeepFbxSize(
             Transform vis,
@@ -132,8 +156,7 @@ namespace Warewind.Runtime
         }
 
         /// <summary>
-        /// Belly bays: after COM@hardpoint, bottom still hangs into air. Lift world-up until
-        /// bottom is only BayBottomSlackM below the hardpoint (pulls hull into the bay).
+        /// Belly bays: lift along hardpoint up until the model belly is flush (BayBottomSlackM).
         /// </summary>
         private static void LiftBayIntoFuselage(Transform vis)
         {
@@ -142,21 +165,37 @@ namespace Warewind.Runtime
             if (!TryEncapsulateWorld(vis, out Bounds world, includeDisabled: true))
                 return;
 
-            float hardpointY = vis.parent.position.y;
-            float bottomY = world.min.y;
-            float wantBottom = hardpointY - WarewindConstants.BayBottomSlackM;
-            float lift = wantBottom - bottomY;
-            if (lift <= 0.01f)
+            Vector3 up = vis.parent.up;
+            Vector3 hp = vis.parent.position;
+            if (!TryMinProjection(world, hp, up, out float bottomAlongUp))
                 return;
 
-            // Cap so we don't shove the top through the bay roof.
-            float maxLift = world.size.y * 0.55f + WarewindConstants.BayCenterLiftExtraM;
+            float wantBottom = -WarewindConstants.BayBottomSlackM;
+            float lift = wantBottom - bottomAlongUp;
+            if (lift <= 0.005f)
+                return;
+
+            float maxLift = world.size.y * WarewindConstants.BayMaxLiftHeightFrac +
+                            WarewindConstants.BayCenterLiftExtraM;
             lift = Mathf.Min(lift, maxLift);
 
-            Vector3 liftParent = vis.parent.InverseTransformDirection(Vector3.up) * lift;
-            vis.localPosition += liftParent;
+            vis.position += up * lift;
             WarewindPlugin.ModLog?.LogInfo(
-                $"VisualFit bay lift={lift:F2}m hardpointY={hardpointY:F1} bottomWas={bottomY:F1}");
+                $"VisualFit bay lift={lift:F2}m bottomAlongUp={bottomAlongUp:F2} slack={WarewindConstants.BayBottomSlackM:F2}");
+        }
+
+        private static void NudgeBayUp(Transform vis)
+        {
+            if (vis.parent == null || WarewindConstants.BayExtraLiftM <= 0f)
+                return;
+            vis.position += vis.parent.up * WarewindConstants.BayExtraLiftM;
+        }
+
+        private static void SinkBay(Transform vis, float sinkM)
+        {
+            if (vis.parent == null || sinkM <= 0f)
+                return;
+            vis.position -= vis.parent.up * sinkM;
         }
 
         /// <summary>After COM@hardpoint, shift forward so the aft end stays inside the bay.</summary>
@@ -169,6 +208,26 @@ namespace Warewind.Runtime
 
             Vector3 fwd = vis.parent.forward;
             Vector3 hp = vis.parent.position;
+            if (!TryMinProjection(world, hp, fwd, out float minAlongFwd))
+                return;
+
+            float aftExtent = -minAlongFwd;
+            if (aftExtent <= WarewindConstants.BayAftInsetM)
+                return;
+
+            float shift = aftExtent - WarewindConstants.BayAftInsetM;
+            vis.position += fwd * shift;
+            WarewindPlugin.ModLog?.LogInfo(
+                $"VisualFit bay aft inset shift={shift:F2}m aftWas={aftExtent:F2}m");
+        }
+
+        private static bool TryMinProjection(Bounds world, Vector3 origin, Vector3 axis, out float minProj)
+        {
+            minProj = float.MaxValue;
+            if (axis.sqrMagnitude < 0.0001f)
+                return false;
+            axis.Normalize();
+
             Vector3 c = world.center;
             Vector3 ext = world.extents;
             Vector3[] corners =
@@ -183,22 +242,13 @@ namespace Warewind.Runtime
                 c + new Vector3(ext.x, ext.y, ext.z)
             };
 
-            float minProj = float.MaxValue;
             for (int i = 0; i < corners.Length; i++)
             {
-                float p = Vector3.Dot(corners[i] - hp, fwd);
+                float p = Vector3.Dot(corners[i] - origin, axis);
                 if (p < minProj)
                     minProj = p;
             }
-
-            float aftExtent = -minProj;
-            if (aftExtent <= WarewindConstants.BayAftInsetM)
-                return;
-
-            float shift = aftExtent - WarewindConstants.BayAftInsetM;
-            vis.position += fwd * shift;
-            WarewindPlugin.ModLog?.LogInfo(
-                $"VisualFit bay aft inset shift={shift:F2}m aftWas={aftExtent:F2}m");
+            return minProj < float.MaxValue;
         }
 
         private static Quaternion AxisToForward(int axis)

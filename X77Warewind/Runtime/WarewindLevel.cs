@@ -7,6 +7,15 @@ namespace Warewind
     /// </summary>
     internal static class WarewindLevel
     {
+        internal static bool OnCourse(Vector3 vel, Vector3 toTgtHoriz, float minDot)
+        {
+            Vector3 vH = vel;
+            vH.y = 0f;
+            if (vH.sqrMagnitude < 1f || toTgtHoriz.sqrMagnitude < 0.01f)
+                return false;
+            return Vector3.Dot(vH.normalized, toTgtHoriz.normalized) >= minDot;
+        }
+
         internal static bool TargetBehind(Vector3 vel, Vector3 toTgtHoriz)
         {
             Vector3 vH = vel;
@@ -31,15 +40,15 @@ namespace Warewind
             return aim.sqrMagnitude > 0.01f ? aim.normalized : v;
         }
 
-        internal static float OverTopPitchDeg(Vector3 vel, Vector3 toTgtHoriz)
+        internal static float OverTopPitchDeg(WarewindFlight f, Vector3 vel, Vector3 toTgtHoriz)
         {
             Vector3 vH = vel;
             vH.y = 0f;
             if (vH.sqrMagnitude < 1f || toTgtHoriz.sqrMagnitude < 0.01f)
-                return WarewindConstants.OverTopPitchDeg;
+                return f.OverTopPitchEff;
             float dot = Vector3.Dot(toTgtHoriz.normalized, vH.normalized);
             float u = Mathf.InverseLerp(-1f, 0.25f, dot);
-            return Mathf.Lerp(WarewindConstants.OverTopPitchDeg, WarewindConstants.LoftPitchMaxDeg, u);
+            return Mathf.Lerp(f.LoftPitchMaxEff, f.OverTopPitchEff, u);
         }
 
         internal static float AimPitchDeg(
@@ -48,12 +57,19 @@ namespace Warewind
         {
             if (phase == WarewindPhase.Drop)
                 return f.OverTopActive
-                    ? OverTopPitchDeg(vel, toTgtHoriz)
+                    ? OverTopPitchDeg(f, vel, toTgtHoriz)
                     : WarewindConstants.DropPitchDeg;
+
+            if (f.DirectAttack && phase != WarewindPhase.Cruise && phase != WarewindPhase.Dive)
+            {
+                f.PitchCmd = Mathf.MoveTowards(
+                    f.PitchCmd, WarewindConstants.DropPitchDeg, WarewindConstants.PitchSlewCatchDegS * Time.fixedDeltaTime);
+                return f.PitchCmd;
+            }
 
             if (f.OverTopActive)
             {
-                float pitchTarget = OverTopPitchDeg(vel, toTgtHoriz);
+                float pitchTarget = OverTopPitchDeg(f, vel, toTgtHoriz);
                 f.PitchCmd = Mathf.MoveTowards(
                     f.PitchCmd, pitchTarget, WarewindConstants.PitchSlewCatchDegS * Time.fixedDeltaTime);
                 return f.PitchCmd;
@@ -63,10 +79,14 @@ namespace Warewind
             float target;
             if (phase == WarewindPhase.Cruise)
             {
+                float cruiseTarget = cruise;
+                if (f.DirectAttack)
+                    cruiseTarget = Mathf.Min(cruise, alt + 400f);
+
                 float sp = Mathf.Max(40f, speed);
                 float sinMax = Mathf.Sin(maxPitch * Mathf.Deg2Rad);
                 float vyMax = sp * sinMax;
-                float err = cruise - alt;
+                float err = cruiseTarget - alt;
                 float vyDes = err * WarewindConstants.LevelVyGain - climb * WarewindConstants.LevelClimbDamp;
                 vyDes = Mathf.Clamp(vyDes, -vyMax, vyMax);
                 target = Mathf.Asin(Mathf.Clamp(vyDes / sp, -sinMax, sinMax)) * Mathf.Rad2Deg;
@@ -74,10 +94,8 @@ namespace Warewind
             else
             {
                 float u = Mathf.Clamp01(alt / Mathf.Max(500f, cruise));
-                if (u < 0.65f)
-                    target = maxPitch;
-                else
-                    target = Mathf.Lerp(maxPitch, 0f, (u - 0.65f) / 0.35f);
+                float blend = Mathf.SmoothStep(0.55f, 0.92f, u);
+                target = Mathf.Lerp(maxPitch, 0f, blend);
             }
 
             float slew = phase == WarewindPhase.Cruise
@@ -137,8 +155,8 @@ namespace Warewind
             if (phase == WarewindPhase.Cruise)
                 return WarewindConstants.CruisePitchMaxDeg;
             if (f != null && f.ShallowLoft)
-                return WarewindConstants.LoftPitchShallowDeg;
-            return WarewindConstants.LoftPitchMaxDeg;
+                return f.LoftPitchShallowEff;
+            return f != null ? f.LoftPitchMaxEff : WarewindConstants.LoftPitchMaxDeg;
         }
 
         private static Vector3 Horiz(Vector3 v)

@@ -73,19 +73,12 @@ namespace Warewind
                 $"Warewind stamp host='{host.name}' parent='{parent.name}' renderers={visOn} live={live}");
         }
 
-        internal static void RefitBay(GameObject host)
+        internal static void RefitBay(GameObject host, bool forwardInset, float sinkM = 0f)
         {
             Transform? vis = FindVisual(host.transform);
             if (vis == null)
                 return;
-            VisualFit.ApplyKeepFbxSize(
-                vis,
-                VisualMountSnap.FullModelCenter,
-                WarewindConstants.AttachPylonAliases,
-                0f,
-                WarewindConstants.BayVisualScaleMult,
-                WarewindConstants.Stage1Aliases,
-                WarewindConstants.Stage2Aliases);
+            VisualFit.ApplyBayFit(vis, WarewindConstants.BayVisualScaleMult, forwardInset, sinkM);
             VisualMaterials.ApplyFbxLook(vis.gameObject);
         }
 

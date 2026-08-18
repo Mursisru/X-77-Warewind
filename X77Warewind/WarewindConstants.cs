@@ -21,10 +21,15 @@ namespace Warewind
         public const string CarrierDarkreach = "Darkreach";
         public const string CarrierAlkyon = "FastBomber1";
         public const string PiledriverNukeToken = "tacNuke";
-        public const float BayBottomSlackM = 0.12f;
-        public const float BayCenterLiftExtraM = 0.15f;
+        public const float BayBottomSlackM = 0.03f;
+        public const float BayCenterLiftExtraM = 0.28f;
+        /// <summary>Small world-up nudge after geometry lift (all internal bays).</summary>
+        public const float BayExtraLiftM = 0.05f;
+        /// <summary>Alkyon bay: extra sink after lift so the hull does not pierce the dorsal spine.</summary>
+        public const float AlkyonBaySinkM = 0.38f;
+        public const float BayMaxLiftHeightFrac = 0.72f;
         public const float BayAftInsetM = 0.35f;
-        public const float BayVisualScaleMult = 0.72f;
+        public const float BayVisualScaleMult = 0.68f;
 
         public const string ShellMissileKey = "AAM2";
         public const string ShellMissileKeyAlt = "AAM2_single";
@@ -48,7 +53,10 @@ namespace Warewind
         public const float DropFallM = 25f;
         public const float StabilizeSeconds = 0.35f;
         public const float MotorDelayS = 2.2f;
-        public const float AlignPhaseS = 2.5f;
+        /// <summary>Partial throttle until heading is on target — not a fixed timer.</summary>
+        public const float AlignOnCourseDot = 0.90f;
+        public const float DirectOnCourseDot = 0.70f;
+        public const float AlignPhaseMaxS = 12f;
         public const float PartialThrottle = 0.6f;
         public const float FullThrottle = 1f;
         /// <summary>Vanilla WeaponStation gap between successive station fires.</summary>
@@ -58,32 +66,43 @@ namespace Warewind
         public const float CruiseAltMinM = 1500f;
         public const float DiveCommitDistMinM = 12000f;
         public const float DiveCommitDistMaxM = 70000f;
-        public const float DiveAngleMinDeg = 45f;
-        public const float DiveAngleMaxDeg = 60f;
+        public const float DiveAngleMinDeg = 60f;
+        public const float DiveAngleMaxDeg = 70f;
         public const float DivePullLeadM = 8000f;
+        public const float TerminalDirectDistM = 8000f;
+        /// <summary>Below this range: shallow profile, capped cruise, early dive.</summary>
+        public const float DirectAttackRangeM = 18000f;
         public const float ShallowLoftRangeM = 35000f;
-        public const float LoftPitchMaxDeg = 48f;
-        public const float LoftPitchShallowDeg = 18f;
+        public const float LoftPitchMaxDeg = 87f;
+        public const float LoftPitchShallowDeg = 55f;
+        public const float LoftPitchMinDeg = 18f;
+        public const float DiveAngleFloorDeg = 28f;
+        /// <summary>Min cruise leg in range budget before loft/dive angles are scaled down.</summary>
+        public const float ProfileCruiseSegMinM = 5000f;
+        public const float ProfileCruiseSegFrac = 0.12f;
+        public const float PitchScaleMin = 0.22f;
         /// <summary>Target astern on early phases — pitch up through the vertical toward tgt azimuth.</summary>
-        public const float OverTopPitchDeg = 68f;
+        public const float OverTopPitchDeg = 88f;
         public const float OverTopAimMaxOffDeg = 78f;
         public const float TargetBehindDot = 0.15f;
         public const float DropPitchDeg = 12f;
         public const float AimLookaheadM = 10000f;
-        public const float TerminalDirectDistM = 8000f;
         public const float SoftKillTimeoutS = 900f;
         public const float CruiseThrottle = 0.65f;
         public const float LevelBandM = 2500f;
         public const float LevelVyGain = 0.18f;
         public const float LevelClimbDamp = 0.55f;
         public const float CruisePitchMaxDeg = 10f;
-        public const float PitchSlewLoftDegS = 6f;
+        public const float PitchSlewLoftDegS = 5f;
+        public const float LoftCrossThrustScale = 0.28f;
+        public const float LoftSteepPitchSkipCrossDeg = 52f;
         public const float PitchSlewCruiseDegS = 4f;
         public const float PitchSlewCatchDegS = 20f;
         public const float CruiseYawSlewDegS = 1.0f;
         public const float AimMaxOffMidDeg = 35f;
         public const float AimMaxOffCruiseDeg = 8f;
-        public const float AimMaxOffDiveDeg = 62f;
+        public const float AimMaxOffDiveDeg = 72f;
+        public const float AimMaxOffDirectDeg = 110f;
         public const float TvcAltM = 18000f;
         public const float TvcBodyRateDegS = 14f;
         public const float TvcTorque = 14f;
@@ -91,8 +110,15 @@ namespace Warewind
         public const float CrossThrustMinOffDeg = 3f;
         public const float CrossThrustFullOffDeg = 18f;
         public const float CrossThrustMaxDegS = 18f;
+        /// <summary>Glide/dive: bend velocity toward nose even with motor out.</summary>
+        public const float GlideCrossThrustMaxDegS = 24f;
+        public const float DiveCrossThrustScale = 1.35f;
+        public const float BankKillRate = 0.42f;
 
         public const float BoosterTwr = 3.0f;
+        /// <summary>Stage-1 TWR burst after align → Loft full throttle.</summary>
+        public const float BoosterTwrPunch = 10f;
+        public const float BoosterTwrPunchS = 5f;
         public const float BoosterFuelKg = 720f;
         public const float BoosterBurnS = 40f;
         /// <summary>~Mach 5 sea-level SoS budget for stage-1 / dense air.</summary>
@@ -153,7 +179,7 @@ namespace Warewind
         public const float AtmosphereRho0 = 1.225f;
         public const float DragLoftScale = 0.2f;
         public const float DragCruiseScale = 1f;
-        public const float DragDiveScale = 1.15f;
+        public const float DragDiveScale = 1.4f;
 
         public const float FxWorldScaleM = 0.85f;
         public const float FxAftNudgeM = 0.35f;

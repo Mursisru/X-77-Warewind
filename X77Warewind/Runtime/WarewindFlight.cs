@@ -39,6 +39,7 @@ namespace Warewind
         internal float LevelStartAltM = WarewindConstants.CruiseAltMaxM - 5000f;
         internal float DiveCommitDistM = WarewindConstants.DiveCommitDistMaxM;
         internal bool ShallowLoft;
+        internal bool DirectAttack;
         internal Transform? Engine1;
         internal Transform? Engine2;
         internal Transform? EwDummy;
@@ -47,6 +48,13 @@ namespace Warewind
         internal bool CruiseHeadingSet;
         internal float PitchCmd = WarewindConstants.DropPitchDeg;
         internal bool OverTopActive;
+        internal float BoosterPunchStartT = -1f;
+        internal float PitchScale = 1f;
+        internal float LoftPitchMaxEff = WarewindConstants.LoftPitchMaxDeg;
+        internal float LoftPitchShallowEff = WarewindConstants.LoftPitchShallowDeg;
+        internal float OverTopPitchEff = WarewindConstants.OverTopPitchDeg;
+        internal float DiveAngleMinEff = WarewindConstants.DiveAngleMinDeg;
+        internal float DiveAngleMaxEff = WarewindConstants.DiveAngleMaxDeg;
         internal readonly List<Transform> FlareSockets = new List<Transform>(4);
 
         internal void ClearFlares() => FlareSockets.Clear();

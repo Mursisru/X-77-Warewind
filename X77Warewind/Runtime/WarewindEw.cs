@@ -98,7 +98,7 @@ namespace Warewind
 
             if (kind == WarewindThreatKind.Ir)
             {
-                WarewindFlares.DumpOnThreat(self, flight);
+                WarewindFlares.DumpOnThreat(self, flight, Vector3.Distance(self.transform.position, flight.LastKnownPos));
                 return;
             }
 

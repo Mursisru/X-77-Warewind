@@ -31,8 +31,15 @@ namespace Warewind.Patches
 
             bool bay = __instance != null && __instance.bayDoors != null && __instance.bayDoors.Length > 0;
             PrefabFactory.ActivateMountedInstance(__result, internalBay: bay);
-            if (bay && __instance != null && WarewindBayFit.ShouldRefitAlkyonCentralBay(aircraft, __instance))
-                WarewindVisualStamp.RefitBay(__result);
+            if (!bay)
+                return;
+            if (WarewindBayFit.IsAlkyon(aircraft) && __instance != null)
+            {
+                bool inset = WarewindBayFit.ShouldRefitAlkyonCentralBay(aircraft, __instance);
+                WarewindVisualStamp.RefitBay(__result, inset, WarewindConstants.AlkyonBaySinkM);
+            }
+            else
+                WarewindVisualStamp.RefitBay(__result, false);
         }
     }
 

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Warewind
 {
-    /// <summary>Dive at 45–60° onto the target. Commit = alt/tan(45°) + pull lead (~58km from 50km, not 124).</summary>
+    /// <summary>Dive by live glide geometry (d8886d8). Commit = alt/tan(min)+lead, range×0.55 cap.</summary>
     internal static class WarewindProfile
     {
         internal static void Lock(WarewindFlight f, Vector3 launchPos, Vector3 targetPos)
@@ -11,16 +11,33 @@ namespace Warewind
                 return;
 
             float range = Horiz(launchPos, targetPos);
+            float launchAlt = Mathf.Max(0f, launchPos.y - Datum.LocalSeaY);
             f.LockRangeM = range;
-            f.CruiseAltM = CruiseForRange(range);
+            float cruiseAlt = CruiseForRange(range);
+            f.CruiseAltM = cruiseAlt;
+            WarewindProfilePitch.Apply(f, range, cruiseAlt);
+            f.DirectAttack = range < WarewindConstants.DirectAttackRangeM;
+            if (f.DirectAttack)
+            {
+                f.CruiseAltM = Mathf.Min(
+                    f.CruiseAltM,
+                    launchAlt + 600f,
+                    range * 0.28f);
+                f.CruiseAltM = Mathf.Max(f.CruiseAltM, 400f);
+                f.ShallowLoft = true;
+            }
+            else
+                f.ShallowLoft = f.PitchScale < 0.55f || range < WarewindConstants.ShallowLoftRangeM;
+
             f.LoftEnterAltM = Mathf.Max(f.CruiseAltM * 0.96f, f.CruiseAltM - 400f);
             f.LevelStartAltM = Mathf.Max(500f, f.CruiseAltM * 0.55f);
-            f.DiveCommitDistM = DiveCommitForRange(range, f.CruiseAltM);
-            f.ShallowLoft = range < WarewindConstants.ShallowLoftRangeM;
+            f.DiveCommitDistM = DiveCommitForRange(range, f.CruiseAltM, f.DiveAngleMinEff);
             f.ProfileLocked = true;
 
             WarewindPlugin.ModLog?.LogInfo(
-                $"Warewind profile range={range * 0.001f:F1}km cruise={f.CruiseAltM * 0.001f:F1}km dive@{f.DiveCommitDistM * 0.001f:F1}km shallow={f.ShallowLoft}");
+                $"Warewind profile range={range * 0.001f:F1}km cruise={f.CruiseAltM * 0.001f:F1}km " +
+                $"dive@{f.DiveCommitDistM * 0.001f:F1}km pitchScale={f.PitchScale:F2} direct={f.DirectAttack} " +
+                $"loft={f.LoftPitchMaxEff:F0}° dive={f.DiveAngleMinEff:F0}-{f.DiveAngleMaxEff:F0}°");
         }
 
         internal static void Ensure(WarewindFlight f, Vector3 pos, Vector3 tgt)
@@ -30,15 +47,9 @@ namespace Warewind
             Lock(f, pos, tgt);
         }
 
-        /// <summary>Horiz dist to start dive: 45° line from cruise alt + lead to pull the nose down.</summary>
-        internal static float GlideDistM(float altM)
-        {
-            float a = Mathf.Max(500f, altM);
-            float tan = Mathf.Tan(WarewindConstants.DiveAngleMinDeg * Mathf.Deg2Rad);
-            if (tan < 0.2f)
-                tan = 0.2f;
-            return a / tan + WarewindConstants.DivePullLeadM;
-        }
+        /// <summary>Horiz dist to start dive: alt/tan(min dive) + pull lead.</summary>
+        internal static float GlideDistM(float altM, float minDiveDeg) =>
+            WarewindProfilePitch.GlideHoriz(altM, minDiveDeg);
 
         internal static float CruiseForRange(float rangeM)
         {
@@ -58,9 +69,11 @@ namespace Warewind
             return Mathf.Clamp(alt, WarewindConstants.CruiseAltMinM, WarewindConstants.CruiseAltMaxM);
         }
 
-        internal static float DiveCommitForRange(float rangeM, float cruiseAltM)
+        internal static float DiveCommitForRange(float rangeM, float cruiseAltM, float minDiveDeg)
         {
-            float glide = GlideDistM(cruiseAltM);
+            float glide = GlideDistM(cruiseAltM, minDiveDeg);
+            if (rangeM < WarewindConstants.DirectAttackRangeM)
+                return Mathf.Clamp(Mathf.Min(glide, rangeM * 0.88f), 1500f, rangeM * 0.95f);
             float commit = Mathf.Min(glide, rangeM * 0.55f);
             return Mathf.Clamp(commit, WarewindConstants.DiveCommitDistMinM, WarewindConstants.DiveCommitDistMaxM);
         }

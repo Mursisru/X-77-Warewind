@@ -43,9 +43,11 @@ namespace Warewind
             }
         }
 
-        internal static void DumpOnThreat(Missile missile, WarewindFlight flight)
+        internal static void DumpOnThreat(Missile missile, WarewindFlight flight, float distTarget)
         {
             if (missile == null || flight == null || _prefab == null)
+                return;
+            if (distTarget > WarewindConstants.FlareRangeM)
                 return;
             if (flight.FlaresLeft <= 0)
                 return;

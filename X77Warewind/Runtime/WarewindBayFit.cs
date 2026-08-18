@@ -3,16 +3,20 @@ using UnityEngine;
 
 namespace Warewind.Runtime
 {
-    /// <summary>Alkyon AB-4 central bay only — not all internal bays.</summary>
+    /// <summary>AB-4 Alkyon central bay only — side bays keep pylon stamp (no forward inset).</summary>
     internal static class WarewindBayFit
     {
+        /// <summary>AB-4 Alkyon internal bays. Other carriers keep pylon stamp / generic bay fit.</summary>
+        internal static bool IsAlkyon(Aircraft aircraft)
+        {
+            if (aircraft?.definition is not AircraftDefinition ad)
+                return false;
+            return string.Equals(ad.jsonKey, WarewindConstants.CarrierAlkyon, StringComparison.OrdinalIgnoreCase);
+        }
+
         internal static bool ShouldRefitAlkyonCentralBay(Aircraft aircraft, Hardpoint hardpoint)
         {
-            if (aircraft == null || hardpoint == null)
-                return false;
-            if (aircraft.definition is not AircraftDefinition ad)
-                return false;
-            if (!string.Equals(ad.jsonKey, WarewindConstants.CarrierAlkyon, StringComparison.OrdinalIgnoreCase))
+            if (!IsAlkyon(aircraft) || hardpoint == null)
                 return false;
 
             HardpointSet? set = FindHardpointSet(aircraft, hardpoint);

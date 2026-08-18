@@ -84,6 +84,26 @@ namespace Warewind
                 $"Warewind motors booster TWR={WarewindConstants.BoosterTwr:F1} F={bThrust:F0}N sustain TWR={WarewindConstants.SustainerTwr:F2} F={sThrust:F0}N");
         }
 
+        /// <summary>Stage-1 thrust only. Punch TWR for BoosterTwrPunchS after Loft start; else BoosterTwr.</summary>
+        internal static void ApplyBoosterPunch(Missile missile, bool punch)
+        {
+            if (missile == null || MotorsField == null || MotorType == null)
+                return;
+            if (MotorStage(missile) > 0)
+                return;
+
+            Array? motors = MotorsField.GetValue(missile) as Array;
+            if (motors == null || motors.Length == 0)
+                return;
+            object? m0 = motors.GetValue(0);
+            if (m0 == null)
+                return;
+
+            float mass = missile.rb != null ? Mathf.Max(200f, missile.rb.mass) : WarewindConstants.LaunchMassKg;
+            float twr = punch ? WarewindConstants.BoosterTwrPunch : WarewindConstants.BoosterTwr;
+            WriteFloat(m0, "thrust", twr * mass * WarewindConstants.GravityMps2);
+        }
+
         internal static int MotorStage(Missile? missile)
         {
             if (missile == null || MotorStageField == null)

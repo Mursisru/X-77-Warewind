@@ -28,11 +28,15 @@ namespace Warewind
             bool fuel = WarewindMotors.HasFuel(missile);
 
             WarewindDockEject.TryEject(missile, f);
-            AdvancePhase(f, dist, alt, t, fuel);
+            AdvancePhase(f, pos, tgt, dist, alt, t, fuel, vel);
             WarewindStageSep.TrySeparate(missile, f);
             WarewindAero.Tick(missile);
             WarewindMotorFx.KeepAlive(missile);
             ApplyThrottle(missile, f, speed, fuel);
+            bool punch = fuel && f.Phase == WarewindPhase.Loft && WarewindMotors.MotorStage(missile) <= 0
+                && f.BoosterPunchStartT >= 0f
+                && t - f.BoosterPunchStartT <= WarewindConstants.BoosterTwrPunchS;
+            WarewindMotors.ApplyBoosterPunch(missile, punch);
             GlobalPosition aim = BuildAimpoint(f, pos, tgt, dist, alt, vel);
             missile.SetAimpoint(aim, f.LastKnownVel);
             WarewindAssist.FollowNose(missile, f, fuel);
@@ -53,7 +57,7 @@ namespace Warewind
                 WarewindAero.OnFinsDeployed(missile);
             }
 
-            WarewindFlares.Tick(missile, f, dist);
+            WarewindFlares.Tick(missile, f, Vector3.Distance(pos, tgt));
             WarewindEw.Tick(missile, f);
 
             if (t > WarewindConstants.SoftKillTimeoutS)
@@ -61,13 +65,13 @@ namespace Warewind
         }
 
         private static void AdvancePhase(
-            WarewindFlight f, float dist, float alt, float t, bool fuel)
+            WarewindFlight f, Vector3 pos, Vector3 tgt, float dist, float alt, float t, bool fuel, Vector3 vel)
         {
             if (f.Phase is WarewindPhase.Align or WarewindPhase.Loft or WarewindPhase.Cruise)
             {
                 float diveAt = f.DiveCommitDistM;
                 if (!fuel)
-                    diveAt = Mathf.Max(diveAt, WarewindProfile.GlideDistM(alt));
+                    diveAt = Mathf.Max(diveAt, WarewindProfile.GlideDistM(alt, f.DiveAngleMinEff));
                 if (dist <= diveAt)
                 {
                     f.Phase = WarewindPhase.Dive;
@@ -86,10 +90,34 @@ namespace Warewind
                     break;
                 }
                 case WarewindPhase.Align:
-                    if (t >= WarewindConstants.MotorDelayS + WarewindConstants.AlignPhaseS)
-                        f.Phase = f.ShallowLoft ? WarewindPhase.Cruise : WarewindPhase.Loft;
+                {
+                    if (t < WarewindConstants.MotorDelayS)
+                        break;
+                    Vector3 toTgt = HorizDir(pos, tgt);
+                    float need = f.DirectAttack
+                        ? WarewindConstants.DirectOnCourseDot
+                        : WarewindConstants.AlignOnCourseDot;
+                    bool onCourse = WarewindLevel.OnCourse(vel, toTgt, need);
+                    bool timeout = t >= WarewindConstants.MotorDelayS + WarewindConstants.AlignPhaseMaxS;
+                    if (!onCourse && !timeout)
+                        break;
+                    if (f.DirectAttack)
+                        f.Phase = WarewindPhase.Cruise;
+                    else if (f.ShallowLoft)
+                        f.Phase = WarewindPhase.Cruise;
+                    else
+                    {
+                        f.Phase = WarewindPhase.Loft;
+                        f.BoosterPunchStartT = t;
+                    }
                     break;
+                }
                 case WarewindPhase.Loft:
+                    if (f.DirectAttack)
+                    {
+                        f.Phase = WarewindPhase.Cruise;
+                        break;
+                    }
                     if (alt >= f.LoftEnterAltM || alt >= f.CruiseAltM)
                     {
                         f.Phase = WarewindPhase.Cruise;
@@ -108,7 +136,20 @@ namespace Warewind
             }
 
             float top = WarewindMotors.StageTopSpeed(missile);
-            if (speed >= top * 0.99f && f.Phase != WarewindPhase.Cruise)
+            float alt = missile.transform.position.y - Datum.LocalSeaY;
+            bool belowCruise = alt < f.CruiseAltM - 300f;
+
+            if (speed >= top * 0.99f && f.Phase == WarewindPhase.Align)
+            {
+                missile.SetThrottle(0f);
+                return;
+            }
+            if (speed >= top * 0.99f && f.Phase == WarewindPhase.Loft && belowCruise)
+            {
+                missile.SetThrottle(WarewindConstants.CruiseThrottle);
+                return;
+            }
+            if (speed >= top * 0.99f && f.Phase == WarewindPhase.Loft)
             {
                 missile.SetThrottle(0f);
                 return;
@@ -134,7 +175,7 @@ namespace Warewind
             Vector3 velH = vel;
             velH.y = 0f;
             bool early = f.Phase is WarewindPhase.Drop or WarewindPhase.Align or WarewindPhase.Loft;
-            f.OverTopActive = early && WarewindLevel.TargetBehind(vel, toTgt);
+            f.OverTopActive = !f.DirectAttack && early && WarewindLevel.TargetBehind(vel, toTgt);
             Vector3 heading = toTgt;
 
             switch (f.Phase)
@@ -142,9 +183,9 @@ namespace Warewind
                 case WarewindPhase.Drop:
                 {
                     Vector3 d = f.OverTopActive
-                        ? WarewindLevel.OverTopDir(vel, toTgt, WarewindLevel.OverTopPitchDeg(vel, toTgt))
+                        ? WarewindLevel.OverTopDir(vel, toTgt, WarewindLevel.OverTopPitchDeg(f, vel, toTgt))
                         : WarewindLevel.FlightDir(heading, WarewindConstants.DropPitchDeg);
-                    d = WarewindAssist.AimDir(d, vel, f.Phase, f.OverTopActive);
+                    d = WarewindAssist.AimDir(d, vel, f);
                     f.DesiredDir = d;
                     return (pos + d * WarewindConstants.AimLookaheadM).ToGlobalPosition();
                 }
@@ -152,7 +193,7 @@ namespace Warewind
                 case WarewindPhase.Loft:
                 case WarewindPhase.Cruise:
                 {
-                    if (f.Phase == WarewindPhase.Cruise)
+                    if (f.Phase == WarewindPhase.Cruise && !f.DirectAttack)
                     {
                         if (!f.CruiseHeadingSet)
                         {
@@ -170,7 +211,7 @@ namespace Warewind
                     Vector3 d = f.OverTopActive
                         ? WarewindLevel.OverTopDir(vel, toTgt, pitch)
                         : WarewindLevel.FlightDir(heading, pitch);
-                    d = WarewindAssist.AimDir(d, vel, f.Phase, f.OverTopActive);
+                    d = WarewindAssist.AimDir(d, vel, f);
                     f.DesiredDir = d;
                     return (pos + d * WarewindConstants.AimLookaheadM).ToGlobalPosition();
                 }
@@ -182,25 +223,25 @@ namespace Warewind
         private static GlobalPosition DiveAim(
             WarewindFlight f, Vector3 pos, Vector3 tgt, float dist, float alt, Vector3 vel, Vector3 heading)
         {
+            Vector3 toTgt = HorizDir(pos, tgt);
             Vector3 dir;
             if (dist <= WarewindConstants.TerminalDirectDistM && Vector3.Dot(tgt - pos, vel) > 0f)
             {
                 Vector3 lead = tgt + f.LastKnownVel * 0.35f;
                 dir = lead - pos;
+                if (dir.sqrMagnitude < 1f)
+                    dir = WarewindLevel.FlightDir(toTgt, -f.DiveAngleMinEff);
             }
             else
             {
                 float geom = Mathf.Atan2(Mathf.Max(0f, alt), Mathf.Max(100f, dist)) * Mathf.Rad2Deg;
-                float diveDeg = Mathf.Clamp(
-                    geom,
-                    WarewindConstants.DiveAngleMinDeg,
-                    WarewindConstants.DiveAngleMaxDeg);
-                dir = WarewindLevel.FlightDir(heading, -diveDeg);
+                float diveDeg = Mathf.Clamp(geom, f.DiveAngleMinEff, f.DiveAngleMaxEff);
+                dir = WarewindLevel.FlightDir(toTgt, -diveDeg);
             }
 
-            dir = WarewindAssist.AimDir(dir, vel, WarewindPhase.Dive, f.OverTopActive);
-            f.DesiredDir = dir;
-            return (pos + dir * WarewindConstants.AimLookaheadM).ToGlobalPosition();
+            dir = WarewindAssist.AimDir(dir, vel, f);
+            f.DesiredDir = dir.normalized;
+            return (pos + dir.normalized * WarewindConstants.AimLookaheadM).ToGlobalPosition();
         }
 
         private static Vector3 Flat(Vector3 v)
