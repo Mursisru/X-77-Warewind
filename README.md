@@ -47,10 +47,6 @@ Open UnityBake/ in Unity 2022.3.62f3 → Warewind → Build Nobp Bundle
 Blender export (canonical): [`Models/X-75-Warewind.fbx`](Models/X-75-Warewind.fbx)  
 Unity import copy: `UnityBake/Assets/MissilePack/X-75-Warewind.fbx`
 
-## Contributors
-
-See [CONTRIBUTORS.md](CONTRIBUTORS.md).
-
 ## License
 
 MIT — see [LICENSE](LICENSE).
