@@ -13,3 +13,5 @@ UnityBake/Build/
 .cursor/
 .cursorrules
 *.log
+release/
+release-staging/
