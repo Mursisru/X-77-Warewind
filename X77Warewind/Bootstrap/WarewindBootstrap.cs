@@ -40,6 +40,7 @@ namespace Warewind
                 WarewindFlares.Cache(enc);
                 WarewindEw.Cache(enc);
                 WarewindMotorFx.CaptureTbm(enc);
+                WarewindMotorTrails.CaptureAam(enc);
                 WarewindBlast.CaptureTbm(enc);
                 WarewindCalcProxy.Init(enc);
 
@@ -315,6 +316,10 @@ namespace Warewind
             tr.maxAltitude = 80000f;
             info.targetRequirements = tr;
             Warewind.Runtime.WarewindEncyclopediaStats.ApplyTargetRequirements(info);
+
+            Sprite? preview = Warewind.Runtime.WarewindWeaponIcon.Get();
+            if (preview != null)
+                info.weaponIcon = preview;
 
             info.weaponName = WarewindConstants.WeaponInfoName;
             info.shortName = WarewindConstants.ShortName;

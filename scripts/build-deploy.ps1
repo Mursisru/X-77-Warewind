@@ -14,6 +14,10 @@ $deploy = if ($env:NuclearOptionRoot) {
 }
 New-Item -ItemType Directory -Force -Path $deploy | Out-Null
 Copy-Item -LiteralPath ".\X77Warewind\bin\Release\X77Warewind.dll" -Destination $deploy -Force
+$preview = ".\X77Warewind\Resources\PreviewWarewind.png"
+if (Test-Path -LiteralPath $preview) {
+  Copy-Item -LiteralPath $preview -Destination $deploy -Force
+}
 
 $nobpCandidates = @(
   ".\UnityBake\Build\X77Warewind.nobp",

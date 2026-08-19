@@ -18,6 +18,11 @@ namespace Warewind
         public const string MeshPrefabAsset = "WarewindVisual";
         public const string BundleModName = "X77Warewind";
         public const string NobpFileName = "X77Warewind.nobp";
+        public const string PreviewIconFileName = "PreviewWarewind.png";
+        public const string PreviewIconResource = "Warewind.Resources.PreviewWarewind.png";
+        /// <summary>Uniform hull alpha; luma below DarkLuma → half alpha.</summary>
+        public const int PreviewIconAlphaBase = 255;
+        public const int PreviewIconDarkLuma = 145;
         public const string CarrierDarkreach = "Darkreach";
         public const string CarrierAlkyon = "FastBomber1";
         public const string PiledriverNukeToken = "tacNuke";
@@ -184,6 +189,8 @@ namespace Warewind
         public const float FxWorldScaleM = 0.85f;
         public const float FxAftNudgeM = 0.35f;
         public const float FxMaxStartSize = 1.6f;
+        /// <summary>TrailEmitter.emitLifetime counts down while enabled — keep trails for the whole flight.</summary>
+        public const float TrailEmitLifetimeS = 900f;
 
         public const float FlareRangeM = 15000f;
         public const int FlareCount = 50;

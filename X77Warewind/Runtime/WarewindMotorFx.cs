@@ -6,8 +6,8 @@ using UnityEngine;
 namespace Warewind
 {
     /// <summary>
-    /// Exhaust-only FX on PlaceOfSpawnEngine*. No TrailEmitter (AAM vapor C-puffs),
-    /// no cone/shock/mesh wedges. Stock PS under hidden AAM2 mesh are silenced.
+    /// Exhaust PS on PlaceOfSpawnEngine*. Trails: WarewindMotorTrails (TBM/AAM motor, no wing vapor).
+    /// No cone/shock/mesh wedges. Stock PS under hidden AAM2 mesh are silenced.
     /// </summary>
     internal static class WarewindMotorFx
     {
@@ -109,6 +109,7 @@ namespace Warewind
                 }
             }
 
+            WarewindMotorTrails.CaptureFromMotor(booster);
             WarewindPlugin.ModLog?.LogInfo(
                 $"Warewind TBM FX captured from '{tbm.jsonKey}' ps={TbmPsTemplates.Count} audio={TbmAudioClips.Count}");
         }
@@ -191,11 +192,11 @@ namespace Warewind
             if (motors.Length > 1 && motors.GetValue(1) is object m1)
                 moved += RetargetMotor(missile, m1, sock1 != null ? sock1 : sock0!);
 
-            StripAllTrails(motors);
+            int trails = WarewindMotorTrails.Bind(missile, motors, sock0, sock1);
             WipeStockFx(missile, sock0, sock1);
 
             WarewindPlugin.ModLog?.LogInfo(
-                $"Warewind motor FX sock0={(sock0 != null ? sock0.name : "-")} sock1={(sock1 != null ? sock1.name : "-")} moved={moved} tbm={(TbmPsTemplates.Count > 0)}");
+                $"Warewind motor FX sock0={(sock0 != null ? sock0.name : "-")} sock1={(sock1 != null ? sock1.name : "-")} moved={moved} trails={trails} tbm={(TbmPsTemplates.Count > 0)}");
         }
 
         private static int InjectTbmBooster(Missile missile, object motor, Transform socket)
@@ -311,6 +312,7 @@ namespace Warewind
                 }
             }
             StartupField?.SetValue(motor, null);
+            WarewindMotorTrails.Stop(motor);
         }
 
         internal static void KeepAlive(Missile missile)
@@ -337,6 +339,7 @@ namespace Warewind
                         ps.Play(true);
                 }
             }
+            WarewindMotorTrails.KeepAlive(motor, missile);
         }
 
         private static void WipeStockFx(Missile missile, Transform? sock0, Transform? sock1)
@@ -686,7 +689,7 @@ namespace Warewind
             return dst;
         }
 
-        private static void PlaceOnSocket(Transform t, Transform socket, Missile missile)
+        internal static void PlaceOnSocket(Transform t, Transform socket, Missile missile)
         {
             float parent = Mathf.Max(0.01f, (socket.lossyScale.x + socket.lossyScale.y + socket.lossyScale.z) / 3f);
             float local = WarewindConstants.FxWorldScaleM / parent;

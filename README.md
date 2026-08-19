@@ -1,6 +1,6 @@
 # X-77 Warewind
 
-[![Version](https://img.shields.io/badge/version-1.1.0-blue)](https://github.com/Mursisru)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/Mursisru/X-77-Warewind/releases)
 [![BepInEx](https://img.shields.io/badge/BepInEx-5-green)](https://docs.bepinex.dev/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -24,7 +24,8 @@ Json keys stay `missilepack_x77_warewind` / `MissilePack_X77_Warewind_single` fo
 2. Copy the `X-77-Warewind/` folder into `BepInEx/plugins/X-77-Warewind/`:
    - `X77Warewind.dll`
    - `X77Warewind.nobp`
-   - `Textures/Warewind/` if present
+   - `PreviewWarewind.png`
+   - `Textures/Warewind/` (runtime material maps)
 3. Launch the game and select **X-77 Warewind** on Piledriver HE pylons.
 
 ## Build

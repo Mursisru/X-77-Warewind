@@ -377,6 +377,9 @@ namespace Warewind.Patches
             info.bomb = false;
             info.glideBomb = false;
             info.overHorizon = true;
+            Sprite? preview = Warewind.Runtime.WarewindWeaponIcon.Get();
+            if (preview != null)
+                info.weaponIcon = preview;
             Warewind.Runtime.WarewindEncyclopediaStats.ApplyTargetRequirements(info);
             if (WarewindBootstrap.Definition?.unitPrefab != null)
                 info.weaponPrefab = WarewindBootstrap.Definition.unitPrefab;
