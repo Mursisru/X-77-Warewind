@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.1] - 2026-08-22
+
+### Fixed
+
+- Intermittent post-launch AAM-36 identity/visual leak on shared vanilla AAM2 shell (multi-pylon / lost Pending spawn token)
+- Shared `WeaponInfo` + `sortWeapons` on mount spawn; rescue `Claim` when AAM2 shell spawns within Fire window
+- Force Warewind `weaponPrefab` on Fire; bootstrap resolves AAM2 only (no generic AAM fallback)
+
 ## [1.0.0] - 2026-08-19
 
 First public release.
