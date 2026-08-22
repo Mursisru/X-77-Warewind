@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Fixed
+
+- Issue #1: intermittent post-launch AAM-36 identity/visual when the shared AAM2 `unitPrefab` spawn token was lost on multi-pylon or unrelated `SpawnMissile` calls — shared `WeaponInfo` + `sortWeapons` on mount spawn, rescue `Claim` within the Fire window, force `weaponPrefab` on Fire, AAM2-only shell resolve (no generic AAM fallback)
+
 ## [1.0.0] - 2026-08-19
 
 First public release.
