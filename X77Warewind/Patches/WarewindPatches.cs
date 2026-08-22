@@ -15,6 +15,21 @@ namespace Warewind.Patches
         {
             if (!WarewindBootstrap.IsOurMount(weaponMount) || weaponMount.prefab == null)
                 return;
+
+            WeaponInfo? shared = WarewindBootstrap.Info ?? weaponMount.info;
+            if (shared != null)
+            {
+                weaponMount.info = shared;
+                weaponMount.sortWeapons = true;
+                if (WarewindBootstrap.Definition?.unitPrefab != null)
+                    shared.weaponPrefab = WarewindBootstrap.Definition.unitPrefab;
+                foreach (MountedMissile mm in weaponMount.prefab.GetComponentsInChildren<MountedMissile>(true))
+                {
+                    if (mm != null)
+                        mm.info = shared;
+                }
+            }
+
             PrefabFactory.FreezeTemplatePhysics(weaponMount.prefab);
             weaponMount.prefab.SetActive(true);
         }
@@ -51,12 +66,18 @@ namespace Warewind.Patches
             __state = WarewindSpawnGate.TryBegin();
         }
 
-        private static void Postfix(bool __state, Unit target, Missile __result)
+        private static void Postfix(bool __state, GameObject missile, Unit target, Missile __result)
         {
             try
             {
-                if (!__state || __result == null)
+                if (__result == null)
                     return;
+                bool rescue = !__state && WarewindSpawnGate.ShouldRescueClaim(missile);
+                if (!__state && !rescue)
+                    return;
+                if (rescue)
+                    WarewindPlugin.ModLog?.LogWarning(
+                        $"Warewind rescue Claim on '{__result.name}' (AAM2 shell, pending race)");
                 WarewindSpawnGate.Claim(__result, target);
                 WarewindPlugin.ModLog?.LogInfo(
                     $"Warewind SpawnMissile OK '{__result.name}' pos={__result.transform.position}");
@@ -132,11 +153,10 @@ namespace Warewind.Patches
         {
             if (__instance?.info == null || !WarewindBootstrap.IsOurInfo(__instance.info))
                 return;
-            if (WarewindBootstrap.Definition?.unitPrefab != null)
-                __instance.info.weaponPrefab = WarewindBootstrap.Definition.unitPrefab;
+            WarewindSpawnGate.SyncSharedInfo(__instance);
             WarewindSpawnGate.NoteFire(__instance, target, aimpoint);
             WarewindPlugin.ModLog?.LogInfo(
-                $"Warewind Fire target={(target != null ? target.name : "aim")} pending={WarewindSpawnGate.Pending}");
+                $"Warewind Fire target={(target != null ? target.name : "aim")} pending={WarewindSpawnGate.Pending} prefab={(WarewindBootstrap.Definition?.unitPrefab != null ? WarewindBootstrap.Definition.unitPrefab.name : "NULL")}");
         }
     }
 
@@ -366,7 +386,9 @@ namespace Warewind.Patches
         {
             if (!WarewindBootstrap.IsOurMount(__instance) || __instance.info == null)
                 return;
-            WeaponInfo info = __instance.info;
+            WeaponInfo info = WarewindBootstrap.Info ?? __instance.info;
+            __instance.info = info;
+            __instance.sortWeapons = true;
             info.weaponName = WarewindConstants.WeaponInfoName;
             info.shortName = WarewindConstants.ShortName;
             info.massPerRound = WarewindConstants.LaunchMassKg;
@@ -386,6 +408,14 @@ namespace Warewind.Patches
             __instance.mountName = WarewindConstants.MountDisplayName;
             __instance.mass = __instance.emptyMass + WarewindConstants.LaunchMassKg;
             __instance.RCS = WarewindConstants.RadarSize;
+            if (__instance.prefab != null)
+            {
+                foreach (MountedMissile mm in __instance.prefab.GetComponentsInChildren<MountedMissile>(true))
+                {
+                    if (mm != null)
+                        mm.info = info;
+                }
+            }
         }
     }
 

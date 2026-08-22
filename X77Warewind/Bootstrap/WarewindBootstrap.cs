@@ -364,23 +364,20 @@ namespace Warewind
             MissileDefinition? m = PrefabFactory.FindMissileByExactKey(enc, WarewindConstants.ShellMissileKey);
             if (m?.unitPrefab != null)
                 return m;
+            m = PrefabFactory.FindMissileByExactKey(enc, WarewindConstants.ShellMissileKeyAlt);
+            if (m?.unitPrefab != null)
+                return m;
             if (enc.missiles == null)
                 return null;
-            MissileDefinition? fallback = null;
             foreach (MissileDefinition cand in enc.missiles)
             {
                 if (cand?.unitPrefab == null || string.IsNullOrEmpty(cand.jsonKey))
                     continue;
-                if (cand.jsonKey.StartsWith("BallisticMissile", StringComparison.OrdinalIgnoreCase))
-                    continue;
-                if (cand.jsonKey.IndexOf("tacNuke", StringComparison.OrdinalIgnoreCase) >= 0)
-                    continue;
                 if (cand.jsonKey.IndexOf("AAM2", StringComparison.OrdinalIgnoreCase) >= 0)
                     return cand;
-                if (fallback == null && cand.jsonKey.IndexOf("AAM", StringComparison.OrdinalIgnoreCase) >= 0)
-                    fallback = cand;
             }
-            return fallback;
+            WarewindPlugin.ModLog?.LogError("Warewind: AAM2 shell not found — refusing generic AAM fallback.");
+            return null;
         }
 
         private static void KeepSingle(GameObject mountGo)

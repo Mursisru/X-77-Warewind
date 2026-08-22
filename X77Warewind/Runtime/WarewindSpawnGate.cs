@@ -32,8 +32,34 @@ namespace Warewind
             _pendingTarget = target;
             _pendingAimLocal = aimpoint.ToLocalPosition();
             _hasPendingAim = true;
+            SyncSharedInfo(mount);
             WarewindPlugin.ModLog?.LogInfo(
                 $"Warewind NoteFire pending={Pending} target={(target != null ? target.name : "aim")} aim={_pendingAimLocal}");
+        }
+
+        /// <summary>Recent Warewind Fire even if Pending token was stolen by unrelated SpawnMissile.</summary>
+        internal static bool HasRecentFire() =>
+            _until > 0f && Time.realtimeSinceStartup <= _until;
+
+        /// <summary>Shared AAM2 shell spawn that missed TryBegin — reclaim as Warewind.</summary>
+        internal static bool ShouldRescueClaim(GameObject? prefab)
+        {
+            if (!HasRecentFire())
+                return false;
+            GameObject? fly = WarewindBootstrap.Definition?.unitPrefab;
+            return fly != null && ReferenceEquals(prefab, fly);
+        }
+
+        internal static void SyncSharedInfo(MountedMissile? mount)
+        {
+            WeaponInfo? shared = WarewindBootstrap.Info;
+            GameObject? fly = WarewindBootstrap.Definition?.unitPrefab;
+            if (shared == null)
+                return;
+            if (fly != null)
+                shared.weaponPrefab = fly;
+            if (mount != null)
+                mount.info = shared;
         }
 
         internal static bool TryBegin()
@@ -206,6 +232,9 @@ namespace Warewind
         {
             if (go == null)
                 return false;
+            GameObject? fly = WarewindBootstrap.Definition?.unitPrefab;
+            if (fly != null && ReferenceEquals(go, fly))
+                return true;
             if (go.GetComponent<WarewindTag>() != null || go.GetComponentInChildren<WarewindTag>(true) != null)
                 return true;
             return go.name == WarewindConstants.FlyPrefabName;
